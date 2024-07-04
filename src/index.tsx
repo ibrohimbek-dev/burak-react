@@ -5,12 +5,12 @@ import { store } from "./app/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@emotion/react";
-import theme from "./theme";
 
+import { CssBaseline } from "@mui/material";
+import theme from "./CustomMUITheme";
 // --------------------------------------
 // css
 import "./css/index.css";
-import { CssBaseline } from "@mui/material";
 
 const rootElement = document.getElementById("root")!;
 const root = ReactDOM.createRoot(rootElement);
