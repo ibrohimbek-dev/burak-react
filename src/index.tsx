@@ -1,18 +1,29 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "./css/index.css";
+import { ThemeProvider } from "@emotion/react";
+import theme from "./theme";
 
-ReactDOM.render(
+// --------------------------------------
+// css
+import "./css/index.css";
+import { CssBaseline } from "@mui/material";
+
+const rootElement = document.getElementById("root")!;
+const root = ReactDOM.createRoot(rootElement);
+
+root.render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<App />
-		</Provider>
-	</React.StrictMode>,
-	document.getElementById("root")
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+			<Provider store={store}>
+				<App />
+			</Provider>
+		</ThemeProvider>
+	</React.StrictMode>
 );
 
 reportWebVitals();

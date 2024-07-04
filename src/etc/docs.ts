@@ -1,3 +1,6 @@
+export const docs = () => {}
+
+
 // 2024-07-04
 // 57th Lesson
 // Burak react installation
@@ -74,3 +77,62 @@
 // ---------------------------------------------------
 // ReactJS loyihamizni takomillashtirish uchun install bo'lgandan so'ng, keraksiz fayllarni olib tashlaymiz (customization)
 
+
+// 57th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+// =============================================================
+
+// 2024-07-05
+// 58th Lesson
+// MUI and MUI integration
+
+// Darsimiz rejasi:
+// 1) Material UI CSS frameworkining tanlovi
+// 2) Material UI'ni loyihamizga standart integratsiyasini amalga oshiramiz
+// 3) Material UI'ni customized integratsiyasini amalga oshiramiz
+// 4) Loyihamizga container standartlarini joriy etamiz
+
+// ------------------------------------------------------------------
+
+// MUI => ReactJS'ning open-source component library'si hisoblanadi.
+// MUI Google Material Designga asoslangan yuqori sifatlik react componentlarining jamlanmasi hamdir
+
+// Nega MUI'ni tanladik?
+// 1) ReactJS'ning birinchi darajali compoenent library'si hisoblanadi
+// 2) MUI'da juda ham ko'p komponentlar oldindan taxlab berilgan
+// 3) MUI'ni FaceBook style ham deyiladi, sababi, FaceBook'ni qurishda MUI'dan faol foydalanilgan
+// 4) MUI bizga juda ham kop'p imkoniyat yaratib beradi
+
+
+// -------------------------------------------------------
+// Standart Intallation:
+// MUI'ni ikki xil installation metodi mavjud:
+// 1) Default installation => emotion installation
+// 2) Styled component installation => styled component installation
+
+// MUI'ni install qilishdan oldin, react & react-dom external package'lari o'rnatilgan bo'lishi shart!
+
+// MUI'ni integratsiya qilayotgangan vaqtida example-projects'dan loyihamizga tegishlik MUI'ni tanlab o'rnatib olamiz
+// Masalan, biz burak-react loyihamizni react-redux-typescript sifatida o'rnatib olganligimiz uchun, MUI'ning Create React App bo'limini tanlaymiz
+
+
+
+// MUI'ni install qilish uchun quyidagicha commanda beramiz:
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 58th shu yerda yakunlandi
+// 수고 하셨습니다!
