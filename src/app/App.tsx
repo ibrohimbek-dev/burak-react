@@ -1,33 +1,44 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
-import About from "./screens/About";
-import Users from "./screens/Users";
-import Home from "./screens/Home";
 
 import "../css/app.css";
+import { Help, Home, Orders, Products, Users } from "./screens";
+
 const App = () => {
 	return (
 		<div>
 			<nav>
 				<ul>
 					<li>
-						<Link to="/">Home</Link>
+						<Link to="/products">Products Page</Link>
 					</li>
 					<li>
-						<Link to="/about">About</Link>
+						<Link to="/orders">Orders Page</Link>
 					</li>
 					<li>
-						<Link to="/users">Users</Link>
+						<Link to="/users">Member Page</Link>
+					</li>
+					<li>
+						<Link to="/help">Help Page</Link>
+					</li>
+					<li>
+						<Link to="/">Home Page</Link>
 					</li>
 				</ul>
 			</nav>
 
 			<Switch>
-				<Route path={"/about"}>
-					<About />
+				<Route path={"/products"}>
+					<Products />
+				</Route>
+				<Route path={"/orders"}>
+					<Orders />
 				</Route>
 				<Route path={"/users"}>
 					<Users />
+				</Route>
+				<Route path={"/help"}>
+					<Help />
 				</Route>
 				<Route path={"/"}>
 					<Home />

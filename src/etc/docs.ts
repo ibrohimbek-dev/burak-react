@@ -162,6 +162,38 @@ export const docs = () => {}
 // 	</Route>
 // </Switch>;
 
+// -------------------------------------------
+// Biz componentlarimizni ikki hil usul bilan belgilashimiz mumkin:
+// 1) Folder Based
+// 2) File Based
+
+
+// Componentlarni Folder & File Based qilib hosil qilishimiz mumkin
+// Ya'ni ikkala usulda hosil qilingan componentlar bir xil vazifani bajarib bir xil ishlaydi
+
+// Savol? => Unda nega componentlarni Folder Based qilib hosil qilyapmiz?
+// Javob: => Sababi bizda, screen ya'ni asosiy componentimizdan tashqari bizda sectional ham mavjud bo'ladi.
+// Sectional component aynan screen componentimizning bir yaxlit bo'lagi hisoblanadi.
+// Undan ham tashqari bizda yana bir component mavjud, u componentlarimiz juda ham kichik component va takroriy ishlatiladigan
+// component hisoblanadi (reusable component).
+
+// Demak bizda 3 xil componentlar mavjud ekan:
+// 1) Folder Based Components
+// 2) File Based Components
+// 3) Reusable Components
+
+
+// ----------------------------------------
+// Reusable => 'component' folderi tarkibida doim reusable kichik componentlarni ishlatamiz
+// Folder => 'screen' folderi tarkibida doim yirik page componetlarimizni ishlatamiz. Va page'ga dahldor bo'lgan sectional component'larimizni aynan 'secree'ni folderi tarkibida ishlatamiz
+// Sectional => 'secreen' folderi tarkida File Based qilib hosil qilingan componentlar sectional componentlar deyiladi
+
+// TODO: Savol, sectional & file based componentlarini mentordan so'rab olishim kerak
+
+
+
+
+
 
 
 // 59th shu yerda yakunlandi
