@@ -2,9 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-import App from "./App";
+import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@emotion/react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { CssBaseline } from "@mui/material";
 import theme from "./CustomMUITheme";
@@ -17,12 +18,14 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
 	<React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline/>
-			<Provider store={store}>
-				<App />
-			</Provider>
-		</ThemeProvider>
+		<Provider store={store}>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<Router>
+					<App />
+				</Router>
+			</ThemeProvider>
+		</Provider>
 	</React.StrictMode>
 );
 

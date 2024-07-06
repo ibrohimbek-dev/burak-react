@@ -102,7 +102,7 @@ export const docs = () => {}
 // 1) ReactJS'ning birinchi darajali compoenent library'si hisoblanadi
 // 2) MUI'da juda ham ko'p komponentlar oldindan taxlab berilgan
 // 3) MUI'ni FaceBook style ham deyiladi, sababi, FaceBook'ni qurishda MUI'dan faol foydalanilgan
-// 4) MUI bizga juda ham kop'p imkoniyat yaratib beradi
+// 4) MUI bizga juda ham ko'p imkoniyat yaratib beradi
 
 
 // -------------------------------------------------------
@@ -119,20 +119,50 @@ export const docs = () => {}
 
 
 // MUI'ni install qilish uchun quyidagicha commanda beramiz:
-// 
-
-
-
-
-
-
-
-
-
-
-
-
+// npm install @mui/material @emotion/react @emotion/styled
 
 
 // 58th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+// =================================================================
+
+
+// 2024-07-06
+// 59th Lesson
+// Create Client Routing System via React Router DOM
+
+// Darsimiz rejasi:
+// 1) React Router DOM orqalik routing tizimini hosil qilamiz
+// 2) Frontendimizning Screen Componentini hosil etamiz
+
+
+// ---------------------------------------------------
+// Biz Client Routing tizimini react-router-dom package'i orqalik hosil qilamiz
+// react-router-dom package'ini quyidagicha kommanda berish bilan o'rnatamiz:
+// npm i react-router-dom
+
+// reactJS bu library, uning o'zini routing tizimi mavjud emas.
+// Unda routing tizimini xosil qilmoqchi bo'lsak, external package sifatida react-router-dom'ni o'rnatib olishimiz kerak bo'ladi
+
+// -----------------------------------------------
+// Har doim bizning o'zak route tizimimiz, route'ning oxirida bo'lishi kerak
+// route o'zak tizimi => path={"/"}
+
+
+// <Switch>
+// 	<Route path={"/about"}>
+// 		<About />
+// 	</Route>
+// 	<Route path={"/users"}>
+// 		<Users />
+// 	</Route>
+// 	<Route path={"/"}>
+// 		<Home />
+// 	</Route>
+// </Switch>;
+
+
+
+// 59th shu yerda yakunlandi
 // 수고 하셨습니다!
