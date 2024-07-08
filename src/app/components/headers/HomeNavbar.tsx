@@ -3,19 +3,19 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const HomeNavbar = () => {
-	const authMember = 0;
+	const authMember = 1;
 
 	return (
 		<div className="home-navbar">
-			<Container className="">
-				<Stack className="">
+			<Container className="navbar-container">
+				<Stack className="menu">
 					<Box className="">
 						<NavLink to={"/"}>
-							<img className="" alt="" src="/icons/burak.svg" />
+							<img className="brand-logo" alt="" src="/icons/burak.svg" />
 						</NavLink>
 					</Box>
 
-					<Stack className="hover-line">
+					<Stack className="links">
 						<Box className="hover-line">
 							<NavLink activeClassName="underline" to={"/"}>
 								Home
@@ -50,10 +50,16 @@ const HomeNavbar = () => {
 						</Box>
 
 						{authMember ? (
-							<img src="" alt="user" />
+							<img
+								className="user-avatar"
+								src={"/icons/default-user.svg"}
+								alt="user"
+							/>
 						) : (
 							<Box>
-								<Button variant="contained" className="">Login</Button>
+								<Button variant="contained" className="login">
+									Login
+								</Button>
 							</Box>
 						)}
 
