@@ -4,6 +4,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import { Help, Home, Orders, Products, Users } from "./screens";
 import { Footer, HomeNavbar, OtherNavbar } from "./components";
 import "../css/app.css";
+import "../css/navbar.css"
 
 const App = () => {
 	const location = useLocation();
@@ -18,7 +19,7 @@ const App = () => {
 				<Route path={"/orders"}>
 					<Orders />
 				</Route>
-				<Route path={"/users"}>
+				<Route path={"/members/member"}>
 					<Users />
 				</Route>
 				<Route path={"/help"}>
