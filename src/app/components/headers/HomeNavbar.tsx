@@ -62,11 +62,10 @@ const HomeNavbar = () => {
 								</Button>
 							</Box>
 						)}
-
-						{/* BASKET */}
 					</Stack>
 				</Stack>
 
+				{/* BASKET */}
 				<Stack className="header-frame">
 					<Stack className="detail">
 						<Box className="head-txt">World's Most Delicious Cousinne</Box>
@@ -74,16 +73,16 @@ const HomeNavbar = () => {
 						<Box className="service-txt">24 hours service</Box>
 						<Box className="signup">
 							{!authMember ? (
-								<Button className="signup-btn" variant="contained">Sign Up</Button>
+								<Button className="signup-btn" variant="contained">
+									Sign Up
+								</Button>
 							) : null}
 						</Box>
 					</Stack>
 
-          <Box className="logo-frame">
-            <div className="logo-img">
-              
-            </div>
-          </Box>
+					<Box className="logo-frame">
+						<div className="logo-img"></div>
+					</Box>
 				</Stack>
 			</Container>
 		</div>

@@ -7,7 +7,8 @@ import { Footer, HomeNavbar, OtherNavbar } from "./components";
 
 
 import "../css/app.css";
-import "../css/navbar.css"
+import "../css/home-navbar.css"
+import "../css/other-navbar.css"
 
 const App = () => {
 	const location = useLocation();
