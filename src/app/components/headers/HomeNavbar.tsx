@@ -50,6 +50,8 @@ const HomeNavbar = () => {
 							</NavLink>
 						</Box>
 
+						<Basket />
+
 						{authMember ? (
 							<img
 								className="user-avatar"
@@ -66,7 +68,6 @@ const HomeNavbar = () => {
 					</Stack>
 				</Stack>
 
-				<Basket/>
 				<Stack className="header-frame">
 					<Stack className="detail">
 						<Box className="head-txt">World's Most Delicious Cousinne</Box>
