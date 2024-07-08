@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const HomeNavbar = () => {
-	const authMember = 1;
+	const authMember = 0;
 
 	return (
 		<div className="home-navbar">
@@ -67,7 +67,24 @@ const HomeNavbar = () => {
 					</Stack>
 				</Stack>
 
-				<Stack className="">DETAIL</Stack>
+				<Stack className="header-frame">
+					<Stack className="detail">
+						<Box className="head-txt">World's Most Delicious Cousinne</Box>
+						<Box className="wel-txt">The Choice, not just a choice</Box>
+						<Box className="service-txt">24 hours service</Box>
+						<Box className="signup">
+							{!authMember ? (
+								<Button className="signup-btn" variant="contained">Sign Up</Button>
+							) : null}
+						</Box>
+					</Stack>
+
+          <Box className="logo-frame">
+            <div className="logo-img">
+              
+            </div>
+          </Box>
+				</Stack>
 			</Container>
 		</div>
 	);
