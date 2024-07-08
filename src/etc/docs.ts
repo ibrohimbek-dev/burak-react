@@ -221,3 +221,20 @@ export const docs = () => {}
 
 // 60th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-08
+// 61th Lesson
+// Footer Develop qilamiz
+
+// Darsimiz rejasi:
+// 1) Headerlarni develop jarayonlarini yakunlaymiz
+// 2) Footerlarni birga develop qilamiz
+
+
+// ---------------------------------------------------
+
+// 61th shu yerda yakunlandi
+// 수고 하셨습니다!
