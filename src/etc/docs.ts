@@ -180,21 +180,44 @@ export const docs = () => {}
 // Demak bizda 3 xil componentlar mavjud ekan:
 // 1) Folder Based Components
 // 2) File Based Components
-// 3) Reusable Components
+// 3) Common Components
 
 
 // ----------------------------------------
-// Reusable => 'component' folderi tarkibida doim reusable kichik componentlarni ishlatamiz
+// Common => 'component' folderi tarkibida doim reusable kichik componentlarni ishlatamiz
 // Folder => 'screen' folderi tarkibida doim yirik page componetlarimizni ishlatamiz. Va page'ga dahldor bo'lgan sectional component'larimizni aynan 'secree'ni folderi tarkibida ishlatamiz
 // Sectional => 'secreen' folderi tarkida File Based qilib hosil qilingan componentlar sectional componentlar deyiladi
-
-// TODO: Savol, sectional & file based componentlarini mentordan so'rab olishim kerak
-
-
-
-
 
 
 
 // 59th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+
+
+// =================================================================
+
+// 2024-07-08
+// 60th Lesson
+// Develop Headers & Navbars
+// Darsimiz rejasi:
+// 1) Header & Footer'larni ahamiyati
+// 2) Figma loyihasiga qarab publishing bo'yicha rejalarni amalga oshiramiz
+// 3) Header va navbarni publishingini amalga oshiramiz
+
+// ---------------------------------------------------
+
+// reusable (common) components => ma'lum bir screen'ga dahldor bo'lgan component'lar hisoblanmaydi,
+// aksincha, loyihamizning istalgan yerida keng ko'lamda chaqiriladigan component'lar hisoblanadi.
+
+
+// Loyihamizda ikki turdagi header componentlar mavjud:
+// 1) Birinchi header'ni biz home page'da ishlatsak
+// 2) Ikkinchi header'ni biz boshqa screen page'arda ishlatamiz
+
+// ---------------------------------------------------
+
+// NavLink => Biz loyihamizda asosan Link emas NavLink'dan foydalanamiz. Va buning imkoniyatlari katta
+
+// 60th shu yerda yakunlandi
 // 수고 하셨습니다!
