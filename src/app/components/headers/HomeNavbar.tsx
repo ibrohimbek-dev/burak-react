@@ -1,6 +1,7 @@
 import { Box, Button, Container, Stack } from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Basket from "./Basket";
 
 const HomeNavbar = () => {
 	const authMember = 0;
@@ -65,7 +66,7 @@ const HomeNavbar = () => {
 					</Stack>
 				</Stack>
 
-				{/* BASKET */}
+				<Basket/>
 				<Stack className="header-frame">
 					<Stack className="detail">
 						<Box className="head-txt">World's Most Delicious Cousinne</Box>
