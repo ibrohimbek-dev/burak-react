@@ -185,14 +185,13 @@ export const docs = () => {}
 
 // ----------------------------------------
 // Common => 'component' folderi tarkibida doim reusable kichik componentlarni ishlatamiz
-// Folder => 'screen' folderi tarkibida doim yirik page componetlarimizni ishlatamiz. Va page'ga dahldor bo'lgan sectional component'larimizni aynan 'secree'ni folderi tarkibida ishlatamiz
+// Screen => 'screen' folderi tarkibida doim yirik page componetlarimizni ishlatamiz. Va page'ga dahldor bo'lgan sectional component'larimizni aynan 'secree'ni folderi tarkibida ishlatamiz
 // Sectional => 'secreen' folderi tarkida File Based qilib hosil qilingan componentlar sectional componentlar deyiladi
 
 
 
 // 59th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 
 // =================================================================
@@ -237,4 +236,24 @@ export const docs = () => {}
 // ---------------------------------------------------
 
 // 61th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+
+
+// =================================================================
+
+// 2024-07-11
+// 62th Lesson
+// Developing the main page
+
+// Darsimiz rejasi:
+// 1) HomePage Screen Componentiga tegishli bo'lgan Sectional Componentlarni hosil qilamiz
+// 2) Statistics Sectional Componentini develop qilamiz
+// 3) Mashxur taomlar ya'i PopulatDishes Sectional Componentini develop qilamiz
+
+// ---------------------------------------------------
+
+
+
+// 62th shu yerda yakunlandi
 // 수고 하셨습니다!

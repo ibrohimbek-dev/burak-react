@@ -12,7 +12,8 @@ const Footers = styled.div`
 `;
 
 const Footer = () => {
-	const authMember = null;
+  const authMember = null;
+  console.log("Hello World!")
 
 	return (
 		<Footers>
