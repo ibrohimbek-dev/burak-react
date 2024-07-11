@@ -1,5 +1,3 @@
-
-
 .home-page {
 	width: 100%;
 	height: auto;
@@ -41,10 +39,51 @@
 
 .home-page .static-frame .info .static-box .static-text {
 	text-align: center;
-  font-family: "Poppins";
-  font-size: 20px;  
-  font-style: normal;
-  font-weight: 500;
-  line-height: 30px;
-  color: #d7b686;
+	font-family: "Poppins";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 30px;
+	color: #d7b686;
+}
+
+/* POPULAR DISHES */
+.home-page .popular-dishes-frame {
+	width: 100%;
+	height: 580px;
+	display: flex;
+	background: #f8f8ff;
+}
+
+.home-page .popular-dishes-frame .popular-section {
+	margin-top: 45px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.home-page .popular-dishes-frame .popular-section .category-title {
+	text-align: center;
+	font-family: "Roboto Serif";
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	letter-spacing: 1.44px;
+	color: #000;
+}
+
+.home-page .popular-dishes-frame .popular-section .cards-frame .card {
+	min-height: 430px;
+	min-width: 300px;
+	cursor: pointer;
+}
+
+.home-page .popular-dishes-frame .cards-frame .card .card-cover {
+	background: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0.4),
+			rgba(0, 0, 0, 0) 200px
+		),
+		linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0), 300px);
 }
