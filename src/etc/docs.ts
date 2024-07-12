@@ -253,7 +253,27 @@ export const docs = () => {}
 
 // ---------------------------------------------------
 
-
-
 // 62th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-11
+// 63th Lesson
+//
+
+// Darsimiz rejasi:
+// 1) Target Play haqida gaplashamiz
+// 2) Bosh sahifamizning NewDishes Screen Componentini hosil qilamiz
+// 3) Advertisement Sectional Componentini hosil qilamiz
+// 4) ActiveUsers Sectional Componentini hosil qilamiz
+// 5) HomePage Events Sectional Componentini hosil qilamiz
+
+// ---------------------------------------------------
+
+// Target Play => Target Play o'zi nima?
+
+
+// 63th shu yerda yakunlandi
 // 수고 하셨습니다!

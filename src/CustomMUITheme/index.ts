@@ -1,7 +1,7 @@
-import { createTheme } from '@mui/material/styles';
-import { common } from '@mui/material/colors';
-import shadow from './shadow';
-import typography from './typography';
+import { createTheme } from "@mui/material/styles";
+import { common } from "@mui/material/colors";
+import shadow from "./shadow";
+import typography from "./typography";
 // import { maxWidth } from '@mui/system';
 
 /**
@@ -9,22 +9,22 @@ import typography from './typography';
  */
 const light = {
 	palette: {
-		type: 'light',
+		type: "light",
 		background: {
-			default: '#f8f8ff',
+			default: "#f8f8ff",
 			paper: common.white,
 		},
 		primary: {
-			contrastText: '#d7b586',
-			main: '#343434',
+			contrastText: "#d7b586",
+			main: "#343434",
 		},
 		secondary: {
-			contrastText: '#343434',
-			main: '#d7b586',
+			contrastText: "#343434",
+			main: "#d7b586",
 		},
 		text: {
-			primary: '#343434',
-			secondary: '#d7b586',
+			primary: "#343434",
+			secondary: "#d7b586",
 			dark: common.black,
 		},
 	},
@@ -32,14 +32,14 @@ const light = {
 		MuiContainer: {
 			styleOverrides: {
 				root: {
-					height: '100%',
+					height: "100%",
 				},
 			},
 		},
 		MuiCssBaseline: {
 			styleOverrides: {
-				html: { height: '100%' },
-				body: { background: '#f4f6f8', height: '100%', minHeight: '100%' },
+				html: { height: "100%" },
+				body: { background: "#f4f6f8", height: "100%", minHeight: "100%" },
 			},
 		},
 	},
@@ -54,8 +54,8 @@ theme = createTheme(theme, {
 		MuiContainer: {
 			styleOverrides: {
 				maxWidthLg: {
-					[theme.breakpoints.up('lg')]: {
-						maxWidth: '1300px',
+					[theme.breakpoints.up("lg")]: {
+						maxWidth: "1300px",
 					},
 				},
 			},
