@@ -277,3 +277,19 @@ export const docs = () => {}
 
 // 63th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-13
+// 64th Lesson
+//
+
+// Darsimiz rejasi:
+// Products Page sahifasini publish qilamiz
+// ---------------------------------------------------
+
+// useRouteMatch() => Ayni page endpoint'ini ola olamiz
+
+// 64th shu yerda yakunlandi
+// 수고 하셨습니다!

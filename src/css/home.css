@@ -320,7 +320,7 @@
 	cursor: pointer;
 }
 
-.home-page .active-users-frame .user-wiper-pagination-bullet {
+.home-page .active-users-frame .user-swiper-pagination-bullet {
 	margin-right: 5px;
 	width: 8px;
 	height: 8px;
