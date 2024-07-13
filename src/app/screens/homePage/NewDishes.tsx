@@ -16,7 +16,7 @@ const NewDishes = () => {
 		{ productName: "Lavash", imagePath: "/img/lavash.webp" },
   ];
   
-  const productSizes = ["Small Size", "Normal Size", "Large Size", "Set"]
+  const productSizes:string[] = ["Small Size", "Normal Size", "Large Size", "Set"]
 
 	return (
 		<div className="new-products-frame">

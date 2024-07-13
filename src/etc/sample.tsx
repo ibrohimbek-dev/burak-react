@@ -1,9 +1,7 @@
 import React from 'react'
 
-const Sample = () => {
+export default function sample() {
   return (
-    <div>Sample</div>
+    <div>sample</div>
   )
 }
-
-export default Sample
