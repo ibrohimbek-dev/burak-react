@@ -9,6 +9,8 @@ import "../css/home-navbar.css";
 import "../css/other-navbar.css";
 import "../css/footer.css";
 import "../css/home.css";
+import "../css/product.css";
+import "../css/chosen-product.css";
 
 const App = () => {
 	const location = useLocation();
