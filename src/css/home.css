@@ -242,7 +242,7 @@
 
 /* Shu qismida mentor uchun width'ni 100% qilib ketish kerak */
 .home-page .ads-restaurant-frame {
-	width: 90%;
+	width: 100%;
 	height: 693px;
 	display: flex;
 	overflow: hidden;
