@@ -293,3 +293,20 @@ export const docs = () => {}
 
 // 64th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+
+// =================================================================
+
+// 2024-07-13
+// 65th Lesson
+// Publish product page
+
+// Darsimiz rejasi:
+// 1) ChosenProduct Sectional Component publishingini amalga oshiramiz
+
+
+// ---------------------------------------------------
+
+// 65th shu yerda yakunlandi
+// 수고 하셨습니다!
