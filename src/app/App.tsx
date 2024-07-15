@@ -11,6 +11,9 @@ import "../css/footer.css";
 import "../css/home.css";
 import "../css/product.css";
 import "../css/chosen-product.css";
+import "../css/order.css";
+import "../css/user-page.css";
+import "../css/help-page.css";
 
 const App = () => {
 	const location = useLocation();
@@ -25,7 +28,7 @@ const App = () => {
 				<Route path={"/orders"}>
 					<Orders />
 				</Route>
-				<Route path={"/members/member"}>
+				<Route path={"/members-page"}>
 					<Users />
 				</Route>
 				<Route path={"/help"}>
