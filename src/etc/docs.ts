@@ -310,3 +310,38 @@ export const docs = () => {}
 
 // 65th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-15
+// 65th Lesson
+// Publish Orders Page Screen Component
+
+// Darsimiz rejasi:
+// 1) Material UI'ning Tap Panel Componentini o'rganamiz
+// 2) OrdersPage Screen Componenti va uning Sectional
+// Componentlarini publishingini amalga oshiramiz
+
+
+// ---------------------------------------------------
+
+// 65th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-15
+// 66th Lesson
+// UserPage va HelpPage Screen Componentlarini publishing qilamiz
+
+// Darsimiz rejasi:
+// 1) UserPage Screen Componentini publish qilamiz
+// 2) HelpPage Screen Componentlarini publishing qilamiz
+
+
+// ---------------------------------------------------
+
+// 66th shu yerda yakunlandi
+// 수고 하셨습니다!

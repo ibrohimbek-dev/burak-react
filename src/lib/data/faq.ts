@@ -1,4 +1,4 @@
-export const faq = [
+export const faqs = [
 	{
 		question: 'How to make order?',
 		answer: 'You should choose products and make an order via basket!',

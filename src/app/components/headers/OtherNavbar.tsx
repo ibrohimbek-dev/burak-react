@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
 
 const OtherNavbar = () => {
-  const authMember = 0;
+  const authMember = 1;
 
 
   return (
@@ -38,7 +38,7 @@ const OtherNavbar = () => {
 									</NavLink>
 								</Box>
 								<Box className="hover-line">
-									<NavLink activeClassName="underline" to={"/members/member"}>
+									<NavLink activeClassName="underline" to={"/members-page"}>
 										My Page
 									</NavLink>
 								</Box>
