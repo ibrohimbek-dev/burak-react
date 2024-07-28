@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 
-import { Help, Home, Orders, Products, Users } from "./screens";
+import { Help, Home, Orders, Products, TestCar, Users } from "./screens";
 import { Footer, HomeNavbar, OtherNavbar } from "./components";
 
 import "../css/app.css";
@@ -35,7 +35,8 @@ const App = () => {
 					<Help />
 				</Route>
 				<Route path={"/"}>
-					<Home />
+          {/* <Home /> */}
+          <TestCar/>
 				</Route>
 			</Switch>
 

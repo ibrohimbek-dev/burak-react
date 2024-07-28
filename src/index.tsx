@@ -8,7 +8,7 @@ import { ThemeProvider } from "@emotion/react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import { CssBaseline } from "@mui/material";
-import theme from "./CustomMUITheme";
+import theme from "./MaterialTheme";
 // --------------------------------------
 // css
 import "./css/index.css";

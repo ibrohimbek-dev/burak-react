@@ -315,7 +315,7 @@ export const docs = () => {}
 // =================================================================
 
 // 2024-07-15
-// 65th Lesson
+// 66th Lesson
 // Publish Orders Page Screen Component
 
 // Darsimiz rejasi:
@@ -326,14 +326,14 @@ export const docs = () => {}
 
 // ---------------------------------------------------
 
-// 65th shu yerda yakunlandi
+// 66th shu yerda yakunlandi
 // 수고 하셨습니다!
 
 
 // =================================================================
 
 // 2024-07-15
-// 66th Lesson
+// 67th Lesson
 // UserPage va HelpPage Screen Componentlarini publishing qilamiz
 
 // Darsimiz rejasi:
@@ -343,5 +343,134 @@ export const docs = () => {}
 
 // ---------------------------------------------------
 
-// 66th shu yerda yakunlandi
+// 67th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+// =================================================================
+
+// 2024-07-17
+// 68th Lesson
+// Create Authentication process on users
+
+// Darsimiz rejasi:
+// 1) Burak loyihasini Authentication bo'yicha belgilab olingan
+// strategiyalarni muhokama etamiz
+// 2) Login va Sign up jarayonlarida JWT'ni hosil qilamiz
+// 3) Hosil qilayotgan Tokenlarimizni Cookie'larining ichida saqlaymiz
+// 4) User memberlarimizning credentiallarini tekshirib test qilamiz
+
+// ---------------------------------------------------
+
+// Authentication jarayonini 3 xil usulda xosil qilishimiz mumkin:
+// 1) Sessions (Cookies)
+// 2) Tokens (Cookies)
+// 3) Tokens (Headers)
+
+// 68th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-28
+// 78th Lesson
+// useState() va useEffect() hook'larini o'rganamiz
+
+// Darsimiz rejasi:
+// 1) Reactning class va Functional Componentlarini o'rganamiz
+// 2) Lifecycle methodlarini birga tahlil qilamiz
+// 3) useState() hookini o'rganamiz
+// 4) useEffect() hookini birga o'rganamiz
+
+// ---------------------------------------------------
+
+// React'da doim ikki componentlar mavjud bo'lgan:
+// 1) Class componentlar
+// 2) Functional componentlar
+
+// React Burak loyihamizning barcha componentlarini functional component sifatida
+// qurib oldik va umuman Class component ishlatmadik. Va endi savol tug'iladi, nega biz
+// umuman Class componentidan foydalanmay, functional componentlardan foydalanyapmiz?
+
+// Yuqoridagi savoldan oldin, yana bir savol tug'iladi, aslida Class componenti o'zi nima?
+// Class component bu functional componentning biroz kengroq varianti va u functional compnent bilan
+// syntax jihatidan ham farq qilib React'ning Componentidan extend oladi.
+
+// Class component deyilishining sababi biz componentni class orqalik hosil qilayotganimizda
+// Functional component deyilishining sababi biz componentni function orqalik hosil qilayotganimizda.
+
+
+// Class componentlar bilan ishlash biroz noqulayliklar keltirib chiqaradi.
+// Sababi functional component'ga nisbatan class componentni syntax'lari anchagina murakkab ko'rinishga ega.
+
+// Functional component'lar class componentlarga nisbatan sodda bo'lishiga qaramay, buning ham o'ziga yarasha
+// kamchiliklari bor. Ya'ni functional componentlar o'zining state'lariga ega emas.
+
+// Yuqoridagi muammoni oldini olish uchun, biz functional component'lar tarkibida sun'iy hook'lar hosil qilish
+// ehtiyoji mavjud edi. Va bu ehtijoyni biz react'ning hook'lari orqalik functional componentlar uchun
+// sun'iy hooklarini hosil qilishimiz mumkin ekan.
+
+// Ya'ni functional componentimiz tarkibida, sun'iy state'larni reactning built-in methodi hisoblangan
+// useState() hook'i orqalik amalga oshiramiz.
+
+
+// Reactning 16.8 versiyasiga qadar class componentlar juda keng qamrovda foydalanilgan. 16.8 versiyasidan keyin
+// functional componentlar to'liqligicha hook'lar bilan ishlashni boshlagan.
+
+// ---------------------------------------------------------------
+
+// React Life Cycle Methods:
+// React loyihamizning 3 xil life cycle methodlari mavjud ular:
+// 1) componentDidMount
+// 2) componentDidUpdate
+// 3) componentWillUnmunt
+
+// Bu Life Cycle'ning methodlarini React'ning fazalari ham deb atashadi.
+
+
+// Life Cycle componentDidMount => Birinchi render bo'lganda ishga tushadi
+// Life Cycle componentWillUnmount => Component disappear bo'lishidan oldin ishga tushadi
+// Life Cycle componentDidUpdate => Componentimizdagi biriktirilgan ma'lum bir qiymatni o'zgartirish natijasida bizning virtual DOM'imiz real
+// DOM'ni rebuilt qilib oladi
+
+// Life Cycling methodlarini fazalar deyilishiga sabab, bularni ketma - ket o'z vaqtida ishga
+// tushish bosqichlari mavjudligi uchun.
+
+// Life Cycle componentDidMount => orqalik biz backend'dan data'larni olish uchun ishlatamiz
+
+// -----------------------------------------------------------
+
+// Functional component tarkibida class componentimining sun'iy state'ini hosil qilib beradigan
+// hook bu useState() hooki hisoblanadi.
+
+// Yuqoridagi 3'ta Life Cycle methodini qurish uchun ishlatidagan hook bu useEffect() deyiladi.
+
+// -------------------------------------------------------------
+
+// React'ning qanday hooklari mavjud va hook nima?
+// Hook'lar biz react'ning 16.8 versiyasidan keyin taqdim etilgan ekan
+
+// Hook bu baliq ovidagi ilmoq hisoblanadi. Ya'ni ilmoqga baliq ilinsa bu bizga siganl bo'ladi, va uni
+// biz suvdan tortib olamiz. Huddi shu singarin hook deb nomlanishini sababi, ma'lum operatsiyalar sodir bo'lganda
+// bizning reactimizga signal boradi. Va bizning react applicationimiz mana shu signallar yuzasidan ma'lum bir
+// operatsiyalarni amalga oshiradi.
+
+// Quyida react'ning hooklari:
+// 1) useState()
+// 2) useEffect()
+// 3) useContext()
+// 4) useRef()
+// 5) useReducer()
+// 6) useCallback()
+// 7) useMemo()
+// 8) Custom Hooks
+
+// Yuqoridagi hook'lardan eng ko'p ishlatiladigan hook'lar:
+// 1) useState() => Bizga sun'iy state'larni hosil qilib beradi
+// 2) useEffect() => 3'ta life cycling methodlari bajaradigan vazifani amalga oshirib beradi
+
+
+
+
+// 78th shu yerda yakunlandi
 // 수고 하셨습니다!
