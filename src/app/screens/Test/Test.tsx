@@ -23,17 +23,17 @@ class TestCar extends Component {
 	};
 
 	componentDidMount() {
-		console.log("This is componentDidMount");
+		console.log("This is componentDidMount in Test.tsx");
 		// runs after first render
 	}
 
 	componentWillUnmount() {
-		console.log("This is componentWillUnmount");
+		console.log("This is componentWillUnmount in Test.tsx");
 		// runs before component unmount => Retrieve data from backend server
 	}
 
 	componentDidUpdate() {
-		console.log("This is componentDidUpdate");
+		console.log("This is componentDidUpdate in Test.tsx");
 		//
 	}
 

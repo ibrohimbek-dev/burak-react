@@ -47,7 +47,7 @@ const Events = () => {
 											<div className="event-title-speaker">
 												<strong>{plan?.title}</strong>
 												<div className="event-organizator">
-													<img src={"//icons/speaker.svg"} alt="" />
+													<img src={"/icons/speaker.svg"} alt="" />
 													<p className="spec-text-author">{plan?.author}</p>
 												</div>
 											</div>

@@ -1,5 +1,4 @@
-export const docs = () => {}
-
+export const docs = () => {};
 
 // 2024-07-04
 // 57th Lesson
@@ -42,7 +41,6 @@ export const docs = () => {}
 // Biz Burak SPA loyihamizni framework emas, reactJS library'sidan foydalanib qurishimizni sababi, aslida
 // framework tushunchasini yaxshi tushunib olishda
 
-
 // Biz shu vaqtgacha commandalarni terminaldan npm commandasi bilan berdik,
 // lekin quyidagi SPA loyihamiz uchun yarn commandasidan foydalanamiz. Bu bizga frontend loyihamiz uchun commandlarni berishda juda ham qulay
 
@@ -68,7 +66,6 @@ export const docs = () => {}
 // o'zgarish bo'lgan joynigina Virtual DOM sifatida yangilab beradi va bu bizga resurslarni tejashga yordam beradi.
 // Virtual DOM tayyor mantiqni update qilib bo'lgandan keyin, yangilangan mantiqnigina Real DOM'ga ko'chiradi
 
-
 // reactJS 3 xil asosiy mantiqlardan iborat:
 // 1) Declarative => Har bir state alohida yangilanadi (Virtual DOM)
 // 2) Component-Based => Componentlardan iborat, bir marotaba yozib har yerda istaganimizcha ishlatishimiz mumkin
@@ -76,7 +73,6 @@ export const docs = () => {}
 
 // ---------------------------------------------------
 // ReactJS loyihamizni takomillashtirish uchun install bo'lgandan so'ng, keraksiz fayllarni olib tashlaymiz (customization)
-
 
 // 57th shu yerda yakunlandi
 // 수고 하셨습니다!
@@ -104,7 +100,6 @@ export const docs = () => {}
 // 3) MUI'ni FaceBook style ham deyiladi, sababi, FaceBook'ni qurishda MUI'dan faol foydalanilgan
 // 4) MUI bizga juda ham ko'p imkoniyat yaratib beradi
 
-
 // -------------------------------------------------------
 // Standart Intallation:
 // MUI'ni ikki xil installation metodi mavjud:
@@ -116,17 +111,13 @@ export const docs = () => {}
 // MUI'ni integratsiya qilayotgangan vaqtida example-projects'dan loyihamizga tegishlik MUI'ni tanlab o'rnatib olamiz
 // Masalan, biz burak-react loyihamizni react-redux-typescript sifatida o'rnatib olganligimiz uchun, MUI'ning Create React App bo'limini tanlaymiz
 
-
-
 // MUI'ni install qilish uchun quyidagicha commanda beramiz:
 // npm install @mui/material @emotion/react @emotion/styled
-
 
 // 58th shu yerda yakunlandi
 // 수고 하셨습니다!
 
 // =================================================================
-
 
 // 2024-07-06
 // 59th Lesson
@@ -135,7 +126,6 @@ export const docs = () => {}
 // Darsimiz rejasi:
 // 1) React Router DOM orqalik routing tizimini hosil qilamiz
 // 2) Frontendimizning Screen Componentini hosil etamiz
-
 
 // ---------------------------------------------------
 // Biz Client Routing tizimini react-router-dom package'i orqalik hosil qilamiz
@@ -148,7 +138,6 @@ export const docs = () => {}
 // -----------------------------------------------
 // Har doim bizning o'zak route tizimimiz, route'ning oxirida bo'lishi kerak
 // route o'zak tizimi => path={"/"}
-
 
 // <Switch>
 // 	<Route path={"/about"}>
@@ -167,7 +156,6 @@ export const docs = () => {}
 // 1) Folder Based
 // 2) File Based
 
-
 // Componentlarni Folder & File Based qilib hosil qilishimiz mumkin
 // Ya'ni ikkala usulda hosil qilingan componentlar bir xil vazifani bajarib bir xil ishlaydi
 
@@ -182,17 +170,13 @@ export const docs = () => {}
 // 2) File Based Components
 // 3) Common Components
 
-
 // ----------------------------------------
 // Common => 'component' folderi tarkibida doim reusable kichik componentlarni ishlatamiz
 // Screen => 'screen' folderi tarkibida doim yirik page componetlarimizni ishlatamiz. Va page'ga dahldor bo'lgan sectional component'larimizni aynan 'secree'ni folderi tarkibida ishlatamiz
 // Sectional => 'secreen' folderi tarkida File Based qilib hosil qilingan componentlar sectional componentlar deyiladi
 
-
-
 // 59th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -209,7 +193,6 @@ export const docs = () => {}
 // reusable (common) components => ma'lum bir screen'ga dahldor bo'lgan component'lar hisoblanmaydi,
 // aksincha, loyihamizning istalgan yerida keng ko'lamda chaqiriladigan component'lar hisoblanadi.
 
-
 // Loyihamizda ikki turdagi header componentlar mavjud:
 // 1) Birinchi header'ni biz home page'da ishlatsak
 // 2) Ikkinchi header'ni biz boshqa screen page'arda ishlatamiz
@@ -221,7 +204,6 @@ export const docs = () => {}
 // 60th shu yerda yakunlandi
 // 수고 하셨습니다!
 
-
 // =================================================================
 
 // 2024-07-08
@@ -232,13 +214,10 @@ export const docs = () => {}
 // 1) Headerlarni develop jarayonlarini yakunlaymiz
 // 2) Footerlarni birga develop qilamiz
 
-
 // ---------------------------------------------------
 
 // 61th shu yerda yakunlandi
 // 수고 하셨습니다!
-
-
 
 // =================================================================
 
@@ -255,7 +234,6 @@ export const docs = () => {}
 
 // 62th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -274,10 +252,8 @@ export const docs = () => {}
 
 // Target Play => Target Play o'zi nima?
 
-
 // 63th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -294,8 +270,6 @@ export const docs = () => {}
 // 64th shu yerda yakunlandi
 // 수고 하셨습니다!
 
-
-
 // =================================================================
 
 // 2024-07-13
@@ -305,12 +279,10 @@ export const docs = () => {}
 // Darsimiz rejasi:
 // 1) ChosenProduct Sectional Component publishingini amalga oshiramiz
 
-
 // ---------------------------------------------------
 
 // 65th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -323,12 +295,10 @@ export const docs = () => {}
 // 2) OrdersPage Screen Componenti va uning Sectional
 // Componentlarini publishingini amalga oshiramiz
 
-
 // ---------------------------------------------------
 
 // 66th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -339,7 +309,6 @@ export const docs = () => {}
 // Darsimiz rejasi:
 // 1) UserPage Screen Componentini publish qilamiz
 // 2) HelpPage Screen Componentlarini publishing qilamiz
-
 
 // ---------------------------------------------------
 
@@ -368,7 +337,6 @@ export const docs = () => {}
 
 // 68th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -399,7 +367,6 @@ export const docs = () => {}
 // Class component deyilishining sababi biz componentni class orqalik hosil qilayotganimizda
 // Functional component deyilishining sababi biz componentni function orqalik hosil qilayotganimizda.
 
-
 // Class componentlar bilan ishlash biroz noqulayliklar keltirib chiqaradi.
 // Sababi functional component'ga nisbatan class componentni syntax'lari anchagina murakkab ko'rinishga ega.
 
@@ -413,7 +380,6 @@ export const docs = () => {}
 // Ya'ni functional componentimiz tarkibida, sun'iy state'larni reactning built-in methodi hisoblangan
 // useState() hook'i orqalik amalga oshiramiz.
 
-
 // Reactning 16.8 versiyasiga qadar class componentlar juda keng qamrovda foydalanilgan. 16.8 versiyasidan keyin
 // functional componentlar to'liqligicha hook'lar bilan ishlashni boshlagan.
 
@@ -426,7 +392,6 @@ export const docs = () => {}
 // 3) componentWillUnmunt
 
 // Bu Life Cycle'ning methodlarini React'ning fazalari ham deb atashadi.
-
 
 // Life Cycle componentDidMount => Birinchi render bo'lganda ishga tushadi
 // Life Cycle componentWillUnmount => Component disappear bo'lishidan oldin ishga tushadi
@@ -469,8 +434,21 @@ export const docs = () => {}
 // 1) useState() => Bizga sun'iy state'larni hosil qilib beradi
 // 2) useEffect() => 3'ta life cycling methodlari bajaradigan vazifani amalga oshirib beradi
 
+// ---------------------------------------------------------
 
+// useEffect() doim bir marotaba ishga tushadi, ya'ni bizning componentimiz birinchi qurilgan vaqtida
+// bir marotaba ishga tushadi. Lekin biz useEffect()'ning array dependencies'ga masalan ma'lum bir value'ni
+// pass qiladigan bo'lsak, shu pass bo'lgan value o'zgargan vaqtida useEffect() yana qayta ishga tushadi.
 
+// Ya'ni useEfect() tarkibiga biror bir mantiqni yozishimiz bu componentDidMount bo'lsa, unga dependencies sifatida
+// pass qiladigan bo'lsa, bu holat componentWillUnmount'ga to'g'ri keladi.
+
+// useEffect(() => {
+// 	setCount(count + 1);
+// }, []);
+
+// Agar bir useEffect()'ni hosil qilgandan keyin unga dependecies sifatida bo'sh array'ni bermaydigan bo'lsak
+// bu holat useEffect()'ni qayta - qayta ishga tushishiga olib kelib forever cycling hosil qilib qo'yadi.
 
 // 78th shu yerda yakunlandi
 // 수고 하셨습니다!
