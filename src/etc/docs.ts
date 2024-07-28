@@ -11,7 +11,7 @@ export const docs = () => {};
 // 4) Loyihamizning package'larini sozlaymiz va loyihamizning standartini joriy etamiz
 
 // ------------------------------------------------------
-// Frontendni qurishning ikki xil usuli mavjud:
+// Front-endni qurishning ikki xil usuli mavjud:
 // 1) BSSR => Backend Server Side Redering
 // 2) SPA => (Modern Fronted Development) Singlie Page Application
 
@@ -42,7 +42,7 @@ export const docs = () => {};
 // framework tushunchasini yaxshi tushunib olishda
 
 // Biz shu vaqtgacha commandalarni terminaldan npm commandasi bilan berdik,
-// lekin quyidagi SPA loyihamiz uchun yarn commandasidan foydalanamiz. Bu bizga frontend loyihamiz uchun commandlarni berishda juda ham qulay
+// lekin quyidagi SPA loyihamiz uchun yarn commandasidan foydalanamiz. Bu bizga Front-end loyihamiz uchun commandlarni berishda juda ham qulay
 
 // install yarn by npm:
 // npm i yarn --global
@@ -125,7 +125,7 @@ export const docs = () => {};
 
 // Darsimiz rejasi:
 // 1) React Router DOM orqalik routing tizimini hosil qilamiz
-// 2) Frontendimizning Screen Componentini hosil etamiz
+// 2) Front-endimizning Screen Componentini hosil etamiz
 
 // ---------------------------------------------------
 // Biz Client Routing tizimini react-router-dom package'i orqalik hosil qilamiz
@@ -453,7 +453,6 @@ export const docs = () => {};
 // 78th shu yerda yakunlandi
 // 수고 하셨습니다!
 
-
 // =================================================================
 
 // 2024-07-28
@@ -485,6 +484,143 @@ export const docs = () => {};
 // npm run build || yarn build
 
 // "build": "react-scripts build" => This command creates a build folder and convert TS codes to JS and push them in it.
+
+// --------------------------------------------------------
+// Redux => Architectural Pattern
+
+// Architectural Pattern => Butun bir tizimni ishlashini ta'minlab beradigan qolip hisoblanadi
+// Design Pattern => Ma'lum bir uchastkalarni ishini hal qilib beradi
+
+// Architectural Pattern'ni biz inson tanasining suyagiga o'xshatdik. Ya'ni insonning butun boshlik tanasini
+// harakat bilan ta'minlab berishini Architectural Pattern deb hisoblasak, Bizning bir qo'limiz yoki kaftimiz bu
+// Design Pattern hisoblanadi. Ya'ni mana shu kaftimiz bajaradigan vazifalarnigina ta'minlab beradigan kaftimiz suyaklari
+// Design Pattern'ga misol bo'ladi.
+
+// Architectural va Design Pattern nafaqat backend'ning o'zida balki, backend va Front-end'da ham faol ishlatiladi.
+
+// Biz Burakning backend loyihasida MVC Architectural Pattern'da foydalangan edik. Lekin bularga alternativa sifatida
+// boshqa Pattern'lar ham mavjud. Masalan, Flux av Redux.
+
+// --------------------------------------------------
+// keling bularni tahlil qilib chiqamiz.
+
+// MVC => Model View Controller. Architectural design pattern for developing UI.
+// Flux => Application architecture designed to build client-side web apps
+// Redux => Open-source JavaScript library used for creating the UI. It generaly works with React & Angular development.
+
+// Redux Architecure => Flux Architecture'ga asoslanadi.
+
+// Redux'da ikkita oqim mavjud:
+// 1) Dispatch oqimi
+// 2) Subscription oqimi
+
+// Redux 4 qismdan iborat:
+// Redux: View/UI => Actions => Reducer => Store
+
+// 1) View/UI => Bu qismda backend'dan ma'lumot olinadi va dispatch qilinadi.
+
+// 2) Ma'lumot dispatch qilingan so'ng Action Creator va Action Type'larga yuzlanadi.
+// Action Create & Type'lar Reducer'lar bilan bog'langan bo'ladi.
+
+// 3) Va Reducer'lar ma'lum bir operatsiyalarni Store'imizda sodir bo'lishiga sababchi bo'ladi.
+// Hamda Reducer'lar tegishlik ma'lumotlarni bizning single store'imizning ma'lum bir bo'limlariga borib joylaydi.
+
+// 4) Mana shu Store'ga joylangan ma'lumotlar bizning View/UI'imizga taqdim etiladi.
+
+// Yuqoridagi barcha jarayonlarni biz ikkiga bo'lishimiz mumkin: 1) Dispatch (Slice) 2) Subscribe (Selector)
+
+// Yuqoridagi mantiq va componentlar asosida Redux Architecture'imiz qurilgan.
+
+// ----------------------------------------------------------------------------------
+
+// Doim yozidingizda tuting!
+// Reduxni quyidagi library'lar bilan ham integratsiya qilib ishlata olishimiz mumkin:
+// React, Agnular, VueJS
+
+// Redux va React bulan bir - biriga mutlaqo bog'lanmagan ikkalasi alohida library hisoblanadi.
+
+// Redux'ni mashxur bo'lib ketishiga sababchi bo'lgan library bu React hisoblanadi.
+
+// Backend serverlar stateless hisoblanadi. Va MVC backend uchun ham Front-end uchun ham ishlatishimiz mumkin.
+// Lekin har ikkala holatda ham uni store mavjud bo'lmaydi.
+
+// ------------------------------------------------------------------------
+// Redux vs MVC vs Flux
+
+// Data Flow Direction:
+// MVC => Follows the biderectional flow (alohida models, controllers)
+// Redux =>  Follows the uniderectional flow (aniq bir yo'nalishdagi data flow. Controll on data flow)
+// Flux =>  Follows the uniderectional flow (aniq bir yo'nalishdagi data flow. Controll on data flow)
+
+// Single or Multiple Stores:
+// MVC => No concept of store
+// Redux => Includes single store
+// Flux => Includes multiple stores
+
+// Where Business Logic Resides?:
+// MVC => Controller handles entire logic
+// Flux => Store handles all logic
+// Reducer handles all logic
+
+// SAVOL => all logic bilan entire logic'ni nima farqi bor?
+
+// How Debugging is handled?:
+// MVC => Debugging is difficult duo to bidirectional flow
+// Flux => Ensures simle debugging with the dispachter
+// Redux => Single store makes debugging lot easier
+
+// Where can be used?:
+// MVC =>
+// 1) Shines well in both client and server - side frame works
+// 2) Supports: Front-end frameworks like AngularJS, Ember, Backbone, Sprout, and Knockout
+// 3) Backend frameworks like Spring, Ruby on Rails, Django, Meteor
+
+// Flux =>
+// 1) Supports client-side framework
+// 2) Supports Front-end frameworks like React, AngularJS, VueJS, and Polymer
+
+// Redux =>
+// 1) Supports slient-side framework
+// 2) Supports Front-end frameworks like React, Vue.js, AngularJS, Ember, Backbone.js, Meteor, and Polymer
+
+// ---------------------------------------------------------------------------------
+
+// Agar biz Redux bilan ishlaydigan bo'lsak u bizga single storage'ni hosil qilib beradi.
+// Masalan biz ma'lum component tarkibida ma'lumotlarni qabul qildik, va qabul qilingan ma'lumotlarni
+// Redux'ning Single Store'ga saqlab qo'ya olamiz. Backend'dan kelgan ma'lumotni Redux Single Store'ga
+// saqlaganimizdan keyin, React loyihamizning istalgan componentidan, saqlangan ma'lumotni (backend'dan kelgan)
+// osonlikcha chaqirib olishimiz mumkin ekan.
+
+// Redux'ning Single Store mantig'i bo'lganligi uchun, bu bizning ishimizni ancha osonlashtirib beradi.
+
+// Agar Redux mavjud bo'lmaganida, Parent'dan ~ Child'ga, hamda Child'ni o'zini children'lariga ma'lumotlarni pass
+// qilishimizga to'g'ri kelar edi. Lekin Redux'da esa, istalgan componentdan ma'lumotlarni Redux Single Store'ga saqlab,
+// saqlangan ma'lumotni istalgan component'dan chaqirishimiz mumkin.
+
+// SAVOL => Multipe Stores bilan Single Store'ni nima farqi bor?
+
+// ---------------------------------------------------------
+
+// MVC => Asosiy markaz bu Controller
+// Flux => Asosiy markaz bu Store
+// Redux => Asosiy markaz bu Reducer
+
+
+// ----------------------------------------------------------
+
+
+
+// Redux Toolkit:
+// Oldinlari Redux'ni Toolkit'siz qurib chiqilgan
+
+// Redux Toolkit => Bizning loyihamizni optimallashtirib ish sifatini oshirib resurslarimini tejab beradi.
+
+// Bolier-PLate => Bir mantiq ishlashi uchun yoziladigan yana bir mantiq.
+// Business mantiq uchun emas, balki biror bir kodni ishlashi uchun xizmat qiladigan mantiq bu Boiler-Plate deyiladi.
+// Bolier-Plate bu bosh og'riq hisoblanadi. Aynan Redux Toolkit mana shunday bosh og'riqlardan xalos qilib, faqatgina
+// business mantiq yozish uchun fokusizni qaratishga imkoniyat beradi.
+
+
 
 // 79th shu yerda yakunlandi
 // 수고 하셨습니다!
