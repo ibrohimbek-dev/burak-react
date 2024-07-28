@@ -452,3 +452,39 @@ export const docs = () => {};
 
 // 78th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-28
+// 79th Lesson
+// Learn Redux Architecture
+
+// Darsimiz rejasi:
+// 1) Loyihamizni qanday o'rnatilganligini va qanday tarzda run qilinayotganligini tajlil qilamiz
+// 2) Loyihamizning Redux Architecture'ini o'rganamiz
+// 3) Redux Toolkitning afzalliklari haqida gaplashamiz
+
+// ---------------------------------------------------
+
+// React Burak loyihamizni yangi o'rnatgan vaqtimizda biz quyidagi kommanda orqalik template sifatida
+// redux-typescript'ni o'rnatgan edik:
+
+// npx create-react-app app-name --template redux-typescript
+
+// Loyihamiz JavaScript yoki TypeScript'da run bo'ladi?
+// Biz develop jarayoni uchun loyihamizda TypeScript'ni ishlatdik lekin run qilish uchun JavaScript'ni ishlatamiz.
+
+// Loyihamizni production'da emas balki build qilmasdan local ishga tushiradigan bo'lsak ham loyihamiz JavaScript'da
+// ishga tushadi. Chunki node_modules folder'ir tarkibidagi postcss_loader folderi bizga loyihamizni qisman bo'lsada
+// JavaScript'ga o'girib beradi.
+
+// Loyihamizni production'ga chiqarish uchun biz build commandasini berib, TypeScript'da yozilgan to'lib loyihamizni
+// JavaScript'ga o'girib olishimiz kerak bo'ladi. Buning uchun quyidagi kommandadan birini bersak kifoya:
+
+// npm run build || yarn build
+
+// "build": "react-scripts build" => This command creates a build folder and convert TS codes to JS and push them in it.
+
+// 79th shu yerda yakunlandi
+// 수고 하셨습니다!
