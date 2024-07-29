@@ -5,18 +5,42 @@ import NewDishes from "./NewDishes";
 import Advertisement from "./Advertisement";
 import ActiveUsers from "./ActiveUsers";
 import Events from "./Events";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
+import { setPopularDishes } from "./slice";
+import { retrievePopularDishes } from "./selector";
+import productData from "../../../etc/products.json";
+import { Product } from "../../../lib/types/product";
+
+// REDUX SLICE SELECTOR:
+const actionDispatch = (dispatch: Dispatch) => ({
+	setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
+});
+
+// const popularDishesRetriever = createSelector(
+// 	retrievePopularDishes,
+// 	(popularDishes) => ({ popularDishes })
+// );
 
 // Quyidagi component home screen sectional component hisoblanadi
-const Home = () => {
-  // Selector: Store => Data
+const HomePage = () => {
+	const { setPopularDishes } = actionDispatch(useDispatch());
 
-  
-  useEffect(() => {
-    // Backend server data request => DATA
+	// const { popularDishes } = useSelector(popularDishesRetriever);
 
-    // Slice: Data => Store
-  }, [])
+	// Selector: Store => Data
 
+	useEffect(() => {
+		// Backend server data request => DATA
+		// Slice: Data => Store
+		// Save Data to Slice
+
+		// @ts-ignore
+		setPopularDishes(productData);
+	}, []);
+
+	// console.log("popularDishes =>", popularDishes);
 
 	return (
 		<div className="home-page">
@@ -30,4 +54,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default HomePage;

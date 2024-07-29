@@ -147,7 +147,7 @@ export const docs = () => {};
 // 		<Users />
 // 	</Route>
 // 	<Route path={"/"}>
-// 		<Home />
+// 		<HomePage />
 // 	</Route>
 // </Switch>;
 
@@ -604,9 +604,7 @@ export const docs = () => {};
 // Flux => Asosiy markaz bu Store
 // Redux => Asosiy markaz bu Reducer
 
-
 // ----------------------------------------------------------
-
 
 // Redux Toolkit:
 // Oldinlari Redux'ni Toolkit'siz qurib chiqilgan
@@ -618,11 +616,8 @@ export const docs = () => {};
 // Boiler-Plate bu bosh og'riq hisoblanadi. Aynan Redux Toolkit mana shunday bosh og'riqlardan xalos qilib, faqatgina
 // business mantiq yozish uchun fokusizni qaratishga imkoniyat beradi.
 
-
-
 // 79th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -654,26 +649,23 @@ export const docs = () => {};
 // 1) Screen Component Based Type Integration
 // 2) Target Oriented Type Integration
 
-
 // slice.ts va selector.ts fayllari har bir screen componentimizni ichida mavjud bo'ladi
 
 // useEffect() => Birinchi ishga tushgan vaqti bizga componentDidMount() mantig'ini ishga tushirib beradi
 
-
 // Backend'dan olgan ma'lumotlarimizni to'g'ridan - to'g'ri componentlarda ishlatmaymiz.
 // Aksincha biz ularni birinchi Redux Store'ga saqlashimiz kerak bo'ladi.
 
-
 // Redux Store'ga ma'lumotlar qayd etilganidan keyin biz ularni select qila olamiz.
-
 
 // Agar biz backend'dan kelgan ma'lumotni Redux Store'ga saqlamasdan to'g'ridan - to'g'ri
 // componentlarda ishlatadigan bo'lsak, biz ushbu data'ni faqatgina o'sha componentning o'zidagina ishlata olamiz xolos.
 
-
 // redux-logger => Redux Store'imizni ichida qanday ma'lumotlar mavjud va qay tarzda o'zgarayotganligini biz aniq
-// qilib log qilib beradi. 
+// qilib log qilib beradi.
 
+// @reduxjs/toolkit
+// Savol => Dispatch typescriptmi?
 
 // 80th shu yerda yakunlandi
 // 수고 하셨습니다!

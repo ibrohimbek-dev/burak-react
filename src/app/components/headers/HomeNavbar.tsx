@@ -5,14 +5,12 @@ import Basket from "./Basket";
 
 const HomeNavbar = () => {
 	const authMember = 0;
-	const [count, setCount] = useState<number>(0)
-  const [value, setValue] = useState<boolean>(true);
-  
+	const [count, setCount] = useState<number>(0);
+	const [value, setValue] = useState<boolean>(true);
 
 	useEffect(() => {
 		console.log("This is componentDidMount in HomeNavbar.tsx"); // FETCH DATA
-    setCount(count + 1);
-
+		setCount(count + 1);
 
 		return () => {
 			console.log("This is componentWillUnMount in HomeNavbar.tsx");
@@ -23,8 +21,7 @@ const HomeNavbar = () => {
 	// HANDLERS
 	const buttonHandler = () => {
 		setValue(!value);
-  };
-  
+	};
 
 	return (
 		<div className="home-navbar">

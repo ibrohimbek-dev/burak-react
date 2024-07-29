@@ -1,13 +1,12 @@
 import { Box, Button, Container, Stack } from "@mui/material";
-import React from 'react'
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
 
 const OtherNavbar = () => {
-  const authMember = 1;
+	const authMember = 1;
 
-
-  return (
+	return (
 		<div className="other-navbar">
 			<Container className="navbar-container">
 				<Stack className="menu">
@@ -19,9 +18,7 @@ const OtherNavbar = () => {
 
 					<Stack className="links">
 						<Box className="hover-line">
-							<NavLink to={"/"}>
-								Home
-							</NavLink>
+							<NavLink to={"/"}>HomePage</NavLink>
 						</Box>
 
 						<Box className="hover-line">
@@ -49,9 +46,9 @@ const OtherNavbar = () => {
 							<NavLink activeClassName="underline" to={"/help"}>
 								Help
 							</NavLink>
-            </Box>
-            
-            <Basket/>
+						</Box>
+
+						<Basket />
 
 						{authMember ? (
 							<img
@@ -65,12 +62,12 @@ const OtherNavbar = () => {
 									Login
 								</Button>
 							</Box>
-						)}				
+						)}
 					</Stack>
 				</Stack>
 			</Container>
 		</div>
 	);
-}
+};
 
-export default OtherNavbar
+export default OtherNavbar;
