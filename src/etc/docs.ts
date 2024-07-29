@@ -95,7 +95,7 @@ export const docs = () => {};
 // MUI Google Material Designga asoslangan yuqori sifatlik react componentlarining jamlanmasi hamdir
 
 // Nega MUI'ni tanladik?
-// 1) ReactJS'ning birinchi darajali compoenent library'si hisoblanadi
+// 1) ReactJS'ning birinchi darajali component library'si hisoblanadi
 // 2) MUI'da juda ham ko'p komponentlar oldindan taxlab berilgan
 // 3) MUI'ni FaceBook style ham deyiladi, sababi, FaceBook'ni qurishda MUI'dan faol foydalanilgan
 // 4) MUI bizga juda ham ko'p imkoniyat yaratib beradi
@@ -159,7 +159,6 @@ export const docs = () => {};
 // Componentlarni Folder & File Based qilib hosil qilishimiz mumkin
 // Ya'ni ikkala usulda hosil qilingan componentlar bir xil vazifani bajarib bir xil ishlaydi
 
-// Savol? => Unda nega componentlarni Folder Based qilib hosil qilyapmiz?
 // Javob: => Sababi bizda, screen ya'ni asosiy componentimizdan tashqari bizda sectional ham mavjud bo'ladi.
 // Sectional component aynan screen componentimizning bir yaxlit bo'lagi hisoblanadi.
 // Undan ham tashqari bizda yana bir component mavjud, u componentlarimiz juda ham kichik component va takroriy ishlatiladigan
@@ -460,7 +459,7 @@ export const docs = () => {};
 // Learn Redux Architecture
 
 // Darsimiz rejasi:
-// 1) Loyihamizni qanday o'rnatilganligini va qanday tarzda run qilinayotganligini tajlil qilamiz
+// 1) Loyihamizni qanday o'rnatilganligini va qanday tarzda run qilinayotganligini tahlil qilamiz
 // 2) Loyihamizning Redux Architecture'ini o'rganamiz
 // 3) Redux Toolkitning afzalliklari haqida gaplashamiz
 
@@ -560,7 +559,7 @@ export const docs = () => {};
 // Where Business Logic Resides?:
 // MVC => Controller handles entire logic
 // Flux => Store handles all logic
-// Reducer handles all logic
+// Redux => Reducer handles all logic
 
 // SAVOL => all logic bilan entire logic'ni nima farqi bor?
 
@@ -609,18 +608,52 @@ export const docs = () => {};
 // ----------------------------------------------------------
 
 
-
 // Redux Toolkit:
 // Oldinlari Redux'ni Toolkit'siz qurib chiqilgan
 
 // Redux Toolkit => Bizning loyihamizni optimallashtirib ish sifatini oshirib resurslarimini tejab beradi.
 
-// Bolier-PLate => Bir mantiq ishlashi uchun yoziladigan yana bir mantiq.
+// Boiler-PLate => Bir mantiq ishlashi uchun yoziladigan yana bir mantiq.
 // Business mantiq uchun emas, balki biror bir kodni ishlashi uchun xizmat qiladigan mantiq bu Boiler-Plate deyiladi.
-// Bolier-Plate bu bosh og'riq hisoblanadi. Aynan Redux Toolkit mana shunday bosh og'riqlardan xalos qilib, faqatgina
+// Boiler-Plate bu bosh og'riq hisoblanadi. Aynan Redux Toolkit mana shunday bosh og'riqlardan xalos qilib, faqatgina
 // business mantiq yozish uchun fokusizni qaratishga imkoniyat beradi.
 
 
 
 // 79th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-29
+// 80th Lesson
+// HomePage => Develop Redux Slice and Selectors
+
+// Darsimiz rejasi:
+// 1) HomePage screen Componentiga daxldor type integration'larni amalga oshiramiz
+// 2) HomePage Screen Componentimizning Redux storage'ni configuratsiyasini amalga oshiramiz
+// 3) Redux logger middleware integratsiyasini amalga oshiramiz
+// 4) HomePage'ga daxldor redux Architecture'ni birga test qilamiz
+
+// ---------------------------------------------------
+
+// Bizning Redux Storage'imiz faqatgina birgina storage'dan iborat.
+
+// Masalan, backend'dan ma'lum bir ma'lumotni json formatda olganimizdan so'ng
+// Redux storage'imizga bu ma'lumotni joylaymiz. Bu ma'lumotni Redux Storage'iga
+// joylaganimizdan so'ng, biz bu ma'lumotni SPA loyihamizning istalgan qismida
+// chaqirib olib ishlata olamiz.
+
+// Redux Storage hamma component uchun ochiq hisoblanadi.
+
+// Redux Storage'ni yaratib olishimizdan oldin, butun boshlik loyihamizni
+// type integrasiyasini hosil qilib olishimiz kerak bo'ladi.
+
+// Type integratsiyasini amalga oshirishning ikki xil usuli mavjud:
+// 1) Screen Component Based Type Integration
+// 2) Target Oriented Type Integration
+
+
+// 80th shu yerda yakunlandi
 // 수고 하셨습니다!
