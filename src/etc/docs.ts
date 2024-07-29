@@ -667,8 +667,12 @@ export const docs = () => {};
 // Redux Store'ga ma'lumotlar qayd etilganidan keyin biz ularni select qila olamiz.
 
 
-// Agar biz backend'dan kelgan ma'lumotni Redux Store'ga saqlamasdan to'g'ridan - to'g'ri 
+// Agar biz backend'dan kelgan ma'lumotni Redux Store'ga saqlamasdan to'g'ridan - to'g'ri
 // componentlarda ishlatadigan bo'lsak, biz ushbu data'ni faqatgina o'sha componentning o'zidagina ishlata olamiz xolos.
+
+
+// redux-logger => Redux Store'imizni ichida qanday ma'lumotlar mavjud va qay tarzda o'zgarayotganligini biz aniq
+// qilib log qilib beradi. 
 
 
 // 80th shu yerda yakunlandi
