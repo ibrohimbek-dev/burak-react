@@ -655,5 +655,21 @@ export const docs = () => {};
 // 2) Target Oriented Type Integration
 
 
+// slice.ts va selector.ts fayllari har bir screen componentimizni ichida mavjud bo'ladi
+
+// useEffect() => Birinchi ishga tushgan vaqti bizga componentDidMount() mantig'ini ishga tushirib beradi
+
+
+// Backend'dan olgan ma'lumotlarimizni to'g'ridan - to'g'ri componentlarda ishlatmaymiz.
+// Aksincha biz ularni birinchi Redux Store'ga saqlashimiz kerak bo'ladi.
+
+
+// Redux Store'ga ma'lumotlar qayd etilganidan keyin biz ularni select qila olamiz.
+
+
+// Agar biz backend'dan kelgan ma'lumotni Redux Store'ga saqlamasdan to'g'ridan - to'g'ri 
+// componentlarda ishlatadigan bo'lsak, biz ushbu data'ni faqatgina o'sha componentning o'zidagina ishlata olamiz xolos.
+
+
 // 80th shu yerda yakunlandi
 // 수고 하셨습니다!
