@@ -23,7 +23,7 @@ const homePageSlice = createSlice({
 	},
 });
 
-// SAVOL => actions qayerdan kelyapti
+
 export const { setPopularDishes, setNewDishes, setTopUsers } =
 	homePageSlice.actions;
 

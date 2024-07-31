@@ -70,4 +70,3 @@ const FinishedOrders = () => {
 
 export default FinishedOrders;
 
-// Shu qismiga keldim

@@ -44,7 +44,7 @@ const NewDishes = () => {
 												</AspectRatio>
 											</CardOverflow>
 
-											<CardOverflow variant="soft" sx={{paddingTop: 0}} className="product-detail">
+											<CardOverflow variant="soft" className="product-detail">
 												<Stack className="info">
 													<Stack className="info-name" flexDirection={"row"}>
 														<Typography className="title">

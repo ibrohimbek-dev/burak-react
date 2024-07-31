@@ -26,7 +26,8 @@ const popularDishesRetriever = createSelector(
 );
 
 const PopularDishes = () => {
-	const { popularDishes } = useSelector(popularDishesRetriever);
+  const { popularDishes } = useSelector(popularDishesRetriever);
+  
 
 	return (
 		<div className="popular-dishes-frame">

@@ -561,7 +561,6 @@ export const docs = () => {};
 // Flux => Store handles all logic
 // Redux => Reducer handles all logic
 
-// SAVOL => all logic bilan entire logic'ni nima farqi bor?
 
 // How Debugging is handled?:
 // MVC => Debugging is difficult duo to bidirectional flow
@@ -596,7 +595,6 @@ export const docs = () => {};
 // qilishimizga to'g'ri kelar edi. Lekin Redux'da esa, istalgan componentdan ma'lumotlarni Redux Single Store'ga saqlab,
 // saqlangan ma'lumotni istalgan component'dan chaqirishimiz mumkin.
 
-// SAVOL => Multipe Stores bilan Single Store'ni nima farqi bor?
 
 // ---------------------------------------------------------
 
@@ -665,7 +663,6 @@ export const docs = () => {};
 // qilib log qilib beradi.
 
 // @reduxjs/toolkit
-// Savol => Dispatch typescriptmi?
 
 // 80th shu yerda yakunlandi
 // 수고 하셨습니다!
