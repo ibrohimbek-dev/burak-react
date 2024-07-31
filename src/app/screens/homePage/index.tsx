@@ -18,29 +18,19 @@ const actionDispatch = (dispatch: Dispatch) => ({
 	setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
 });
 
-// const popularDishesRetriever = createSelector(
-// 	retrievePopularDishes,
-// 	(popularDishes) => ({ popularDishes })
-// );
+const popularDishesRetriever = createSelector(
+	retrievePopularDishes,
+	(popularDishes) => ({ popularDishes })
+);
 
 // Quyidagi component home screen sectional component hisoblanadi
 const HomePage = () => {
 	const { setPopularDishes } = actionDispatch(useDispatch());
+	const { popularDishes } = useSelector(popularDishesRetriever);
+  useEffect(() => { }, []);
+  
 
-	// const { popularDishes } = useSelector(popularDishesRetriever);
-
-	// Selector: Store => Data
-
-	useEffect(() => {
-		// Backend server data request => DATA
-		// Slice: Data => Store
-		// Save Data to Slice
-
-		// @ts-ignore
-		setPopularDishes(productData);
-	}, []);
-
-	// console.log("popularDishes =>", popularDishes);
+  console.log("process.env.REACT_APP_API_URL =>", process.env.REACT_APP_API_UR);
 
 	return (
 		<div className="home-page">

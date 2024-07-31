@@ -669,3 +669,24 @@ export const docs = () => {};
 
 // 80th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-07-31
+// 81th Lesson
+// Recieve data from the backend and develop home page
+
+// Darsimiz rejasi:
+// 1) Frontendimizga daxldor environmental variable'larni va configuration faylni hosil etamiz
+// 2) Backenddan ma'lumotlar olish maqsadida API Service'larini joriy etamiz
+// 3) API Service'lar orqali olingan ma'lumotlar asosida HomePage Screen Componentimizni developing jarayonini yakunlaymiz
+
+// ---------------------------------------------------
+
+
+
+
+
+// 81th shu yerda yakunlandi
+// 수고 하셨습니다!
