@@ -9,82 +9,92 @@ import { CssVarsProvider } from "@mui/joy/styles/CssVarsProvider";
 import { CardOverflow } from "@mui/joy";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import { createSelector } from "@reduxjs/toolkit";
+import { retrievePopularDishes } from "./selector";
+import { useSelector } from "react-redux";
+import { serverApi } from "../../../lib/config";
+import { Product } from "../../../lib/types/product";
 
-const productList = [
-	{ productName: "Lavash", imagePath: "/img/lavash.webp" },
-	{ productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-	{ productName: "kebab", imagePath: "/img/kebab.webp" },
-	{ productName: "Kebab Fresh", imagePath: "/img/kebab-fresh.webp" },
-];
+// SAVOL2 => createSelector'ni qaysi package'dan chaqirib ishlatish kerak?
+// import { createSelector } from "@reduxjs/toolkit";
+
+
+// REDUX SELECTOR:
+const popularDishesRetriever = createSelector(
+	retrievePopularDishes,
+	(popularDishes) => ({ popularDishes })
+);
 
 const PopularDishes = () => {
+	const { popularDishes } = useSelector(popularDishesRetriever);
+
 	return (
 		<div className="popular-dishes-frame">
 			<Container>
 				<Stack className="popular-section">
 					<Box className="category-title">Popular Dishes</Box>
 					<Stack className="cards-frame">
-						{productList?.length > 0 ? (
-							productList.map((product, index) => (
-								<CssVarsProvider key={index}>
-									<Card className="card">
-										<CardCover>
-											<img
-												src={product?.imagePath}
-												alt={product?.productName}
-											/>
-										</CardCover>
-										<CardCover className="card-cover" />
-										<CardContent sx={{ justifyContent: "flex-end" }}>
-											<Stack
-												flexDirection={"row"}
-												justifyContent={"space-between"}
+						{popularDishes?.length > 0 ? (
+							popularDishes.map((product: Product) => {
+								const imagePath = `${serverApi}/${product.productImages[0]}`;
+								return (
+									<CssVarsProvider key={product._id}>
+										<Card className="card">
+											<CardCover>
+												<img src={imagePath} alt={product?.productName} />
+											</CardCover>
+											<CardCover className="card-cover" />
+											<CardContent sx={{ justifyContent: "flex-end" }}>
+												<Stack
+													flexDirection={"row"}
+													justifyContent={"space-between"}
+												>
+													<Typography
+														level="h2"
+														fontSize={"lg"}
+														textColor={"#fff"}
+														mb={1}
+													>
+														{product?.productName}
+													</Typography>
+
+													<Typography
+														sx={{
+															fontWeight: "md",
+															color: "neutral.300",
+															alignItems: "center",
+															display: "flex",
+														}}
+													>
+														{product.productViews}
+														<VisibilityIcon
+															sx={{ fontSize: 25, marginLeft: "5px" }}
+														/>
+													</Typography>
+												</Stack>
+											</CardContent>
+
+											<CardOverflow
+												sx={{
+													display: "flex",
+													gap: 1.5,
+													py: 1.5,
+													px: "var(--Card-padding)",
+													borderTop: "1px solid",
+													height: "60px",
+												}}
 											>
 												<Typography
-													level="h2"
-													fontSize={"lg"}
-													textColor={"#fff"}
-													mb={1}
+													startDecorator={<DescriptionOutlinedIcon />}
+													textColor={"neutral.300"}
 												>
-													{product?.productName}
+													{product.productDesc}
 												</Typography>
-
-												<Typography
-													sx={{
-														fontWeight: "md",
-														color: "neutral.300",
-														alignItems: "center",
-														display: "flex",
-													}}
-												>
-													{Math.floor(Math.random() * 600)}
-													<VisibilityIcon
-														sx={{ fontSize: 25, marginLeft: "5px" }}
-													/>
-												</Typography>
-											</Stack>
-										</CardContent>
-
-										<CardOverflow
-											sx={{
-												display: "flex",
-												gap: 1.5,
-												py: 1.5,
-												px: "var(--Card-padding)",
-												borderTop: "1px solid",
-												height: "60px",
-											}}
-										>
-											<Typography
-												startDecorator={<DescriptionOutlinedIcon />}
-												textColor={"neutral.300"}
-											>
-												This is delicious meal
-											</Typography>
-										</CardOverflow>
-									</Card>
-								</CssVarsProvider>
-							))
+											</CardOverflow>
+										</Card>
+									</CssVarsProvider>
+								);
+							})
 						) : (
 							<Box>No products are not available</Box>
 						)}
