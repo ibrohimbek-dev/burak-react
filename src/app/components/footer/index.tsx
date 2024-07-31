@@ -12,7 +12,7 @@ const Footers = styled.div`
 `;
 
 const Footer = () => {
-  const authMember = null;
+	const authMember = null;
 
 	return (
 		<Footers>
@@ -39,7 +39,7 @@ const Footer = () => {
 							<Box>
 								<Box className={"foot-category-title"}>Bo'limlar</Box>
 								<Box className={"foot-category-link"}>
-									<Link to="/">Home</Link>
+									<Link to="/">HomePage</Link>
 									<Link to="/products">Products</Link>
 									{authMember && <Link to="/orders">Orders</Link>}
 									<Link to="/help">Help</Link>

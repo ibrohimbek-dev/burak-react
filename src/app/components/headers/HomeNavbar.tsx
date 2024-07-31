@@ -1,10 +1,25 @@
 import { Box, Button, Container, Stack } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
 
 const HomeNavbar = () => {
-	const authMember = 1;
+	const authMember = 0;
+	const [count, setCount] = useState<number>(0);
+	const [value, setValue] = useState<boolean>(true);
+
+	useEffect(() => {
+		setCount(count + 1);
+
+		return () => {
+		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [value]); // This is componentDidUpdate (dependencies)
+
+	// HANDLERS
+	const buttonHandler = () => {
+		setValue(!value);
+	};
 
 	return (
 		<div className="home-navbar">
@@ -72,10 +87,14 @@ const HomeNavbar = () => {
 					<Stack className="detail">
 						<Box className="head-txt">World's Most Delicious Cousinne</Box>
 						<Box className="wel-txt">The Choice, not just a choice</Box>
-						<Box className="service-txt">24 hours service</Box>
+						<Box className="service-txt">{count} hours service</Box>
 						<Box className="signup">
 							{!authMember ? (
-								<Button className="signup-btn" variant="contained">
+								<Button
+									className="signup-btn"
+									variant="contained"
+									onClick={buttonHandler}
+								>
 									Sign Up
 								</Button>
 							) : null}

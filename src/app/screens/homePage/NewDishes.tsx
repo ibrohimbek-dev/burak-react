@@ -7,16 +7,19 @@ import Card from "@mui/joy/Card";
 import Typography from "@mui/joy/Typography";
 import Divider from "../../components/divider";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { createSelector } from "@reduxjs/toolkit";
+import { retrieveNewDishes } from "./selector";
+import { useSelector } from "react-redux";
+import { serverApi } from "../../../lib/config";
+import { ProductCollection } from "../../../lib/enums/product.enum";
+
+// REDUX SELECTOR:
+const newDishesRetriever = createSelector(retrieveNewDishes, (newDishes) => ({
+	newDishes,
+}));
 
 const NewDishes = () => {
-	const newDishesData = [
-		{ productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-		{ productName: "Kebab", imagePath: "/img/kebab-fresh.webp" },
-		{ productName: "Kebab", imagePath: "/img/kebab.webp" },
-		{ productName: "Lavash", imagePath: "/img/lavash.webp" },
-  ];
-  
-  const productSizes:string[] = ["Small Size", "Normal Size", "Large Size", "Set"]
+	const { newDishes } = useSelector(newDishesRetriever);
 
 	return (
 		<div className="new-products-frame">
@@ -25,44 +28,49 @@ const NewDishes = () => {
 					<Box className="category-title">Fresh Menu</Box>
 					<Stack className="cards-frame">
 						<CssVarsProvider>
-							{newDishesData?.length > 0 ? (
-								newDishesData?.map((dish, index) => (
-									<Card key={index} variant="outlined" className="card">
-										<CardOverflow>
-                      <div className="product-sale">
-                        {productSizes[Math.floor(Math.random() * productSizes?.length)]}
-                      </div>
-											<AspectRatio ratio="1">
-												<img src={dish?.imagePath} alt="" />
-											</AspectRatio>
-										</CardOverflow>
+							{newDishes?.length > 0 ? (
+								newDishes?.map((newDish) => {
+									const imagePath = `${serverApi}/${newDish.productImages[0]}`;
+									const sizeVolume =
+										newDish.productCollection === ProductCollection.DRINK
+											? newDish.productVolume + "L"
+											: newDish.productSize + " size";
+									return (
+										<Card key={newDish._id} variant="outlined" className="card">
+											<CardOverflow>
+												<div className="product-sale">{sizeVolume}</div>
+												<AspectRatio ratio="1">
+													<img src={imagePath} alt="" />
+												</AspectRatio>
+											</CardOverflow>
 
-										<CardOverflow variant="soft" className="product-detail">
-											<Stack className="info">
-												<Stack flexDirection={"row"}>
-													<Typography className="title">
-														{dish?.productName}
-													</Typography>
+											<CardOverflow variant="soft" className="product-detail">
+												<Stack className="info">
+													<Stack className="info-name" flexDirection={"row"}>
+														<Typography className="title">
+															{newDish?.productName}
+														</Typography>
 
-													<Divider width="2" height="24" bg="#d9d9d9" />
+														<Divider width="2" height="24" bg="#d9d9d9" />
 
-													<Typography className="price">
-														${Math.floor(Math.random() * 30)}
-													</Typography>
+														<Typography className="price">
+															${newDish.productPrice}
+														</Typography>
+													</Stack>
+
+													<Stack>
+														<Typography className="views">
+															{newDish.productViews}
+															<VisibilityIcon
+																sx={{ fontSize: 20, marginLeft: "5px" }}
+															/>
+														</Typography>
+													</Stack>
 												</Stack>
-
-												<Stack>
-													<Typography className="views">
-														{Math.floor(Math.random() * 500)}
-														<VisibilityIcon
-															sx={{ fontSize: 20, marginLeft: "5px" }}
-														/>
-													</Typography>
-												</Stack>
-											</Stack>
-										</CardOverflow>
-									</Card>
-								))
+											</CardOverflow>
+										</Card>
+									);
+								})
 							) : (
 								<Box className="no-data">New dishes are not available</Box>
 							)}

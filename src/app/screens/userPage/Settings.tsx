@@ -79,4 +79,3 @@ const Settings = () => {
 
 export default Settings;
 
-// Shu qismiga keldim
