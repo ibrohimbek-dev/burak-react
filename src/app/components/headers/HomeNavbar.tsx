@@ -9,11 +9,9 @@ const HomeNavbar = () => {
 	const [value, setValue] = useState<boolean>(true);
 
 	useEffect(() => {
-		console.log("This is componentDidMount in HomeNavbar.tsx"); // FETCH DATA
 		setCount(count + 1);
 
 		return () => {
-			console.log("This is componentWillUnMount in HomeNavbar.tsx");
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [value]); // This is componentDidUpdate (dependencies)

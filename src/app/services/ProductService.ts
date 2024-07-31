@@ -22,11 +22,9 @@ class ProductService {
       }      
 
       const result = await axios.get(url);
-      console.log("getProducts result =>", result);
 
       return result.data
 		} catch (err) {
-			console.log("Error on getProducts api =>", err);
 			throw err;
 		}
 	}
