@@ -688,3 +688,20 @@ export const docs = () => {};
 
 // 81th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// ==================================================================
+
+// 2024-08-30
+// 82th Lesson
+// Develop ProductsPage Screen Component with Redux Architecture
+
+// Darsimiz rejasi:
+// 1) ProductsPage Screen Componentini type integrationini amalga oshiramiz
+// 2) ProductsPage Screen Componentini Slice va Selectorlariin develop qilamiz
+
+
+// ---------------------------------------------------
+
+// 82th shu yerda yakunlandi
+// 수고 하셨습니다!

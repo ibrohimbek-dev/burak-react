@@ -4,8 +4,8 @@ import { Product } from "./product";
 // REACT APP STATE:
 export interface AppRootState {
 	homePage: HomePageState;
+	productPage: ProductsPageState;
 }
-
 
 // HOME PAGE INTERFACES:
 export interface HomePageState {
@@ -15,6 +15,11 @@ export interface HomePageState {
 }
 
 // PRODUCTS PAGE INTERFACES:
-
+// SAVOL3 => Nega yoki null? Nega so'roq emas? '?'
+export interface ProductsPageState {
+	restaurant: Member | null;
+	chosenProduct: Product[] | null;
+	products: Product[];
+}
 
 // ORDERS PAGE INTERFACES:
