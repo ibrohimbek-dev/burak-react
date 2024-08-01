@@ -9,7 +9,7 @@ class ProductService {
 		this.path = serverApi;
 	}
 
-	public async getProducts(input: ProductInquiry): Promise<Product[]> {
+	public async getAllProducts(input: ProductInquiry): Promise<Product[]> {
 		try {
 			let url = `${this.path}/product/all?order=${input.order}&page=${input.page}&limit=${input.limit}`;
 
@@ -19,11 +19,11 @@ class ProductService {
 
 			if (input.search) {
 				url += `&search=${input.search}`;
-      }      
+			}
 
-      const result = await axios.get(url);
+			const result = await axios.get(url);
 
-      return result.data
+			return result.data;
 		} catch (err) {
 			throw err;
 		}

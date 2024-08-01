@@ -8,23 +8,18 @@ import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { createSelector } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
 import { retrieveProducts } from "./selector";
-
-const products = [
-	{ productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-	{ productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-	{ productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-	{ productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-	{ productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-	{ productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-];
+import { useSelector } from "react-redux";
+import { serverApi } from "../../../lib/config";
+import { ProductCollection } from "../../../lib/enums/product.enum";
 
 const productsRetriever = createSelector(retrieveProducts, (products) => ({
 	products,
 }));
 
-export default function Products() {    
+export default function Products() {
+	const { products } = useSelector(productsRetriever);
 
 	return (
 		<div className={"products"}>
@@ -100,15 +95,21 @@ export default function Products() {
 						</Stack>
 
 						<Stack className={"product-wrapper"}>
-							{products.length !== 0 ? (
-								products.map((product, index) => {
+							{products.length > 0 ? (
+								products.map((product) => {
+									const imagePath = `${serverApi}/${product.productImages[0]}`;
+									const sizeVolume =
+										product.productCollection === ProductCollection.DRINK
+											? product.productVolume + "L"
+											: product.productSize + " size";
+
 									return (
-										<Stack key={index} className={"product-card"}>
+										<Stack key={product._id} className={"product-card"}>
 											<Stack
 												className={"product-img"}
-												sx={{ backgroundImage: `url(${product.imagePath})` }}
+												sx={{ backgroundImage: `url(${imagePath})` }}
 											>
-												<div className={"product-sale"}>Normal size</div>
+												<div className={"product-sale"}>{sizeVolume}</div>
 												<Button className={"shop-btn"}>
 													<img
 														alt=""
@@ -117,10 +118,14 @@ export default function Products() {
 													/>
 												</Button>
 												<Button className={"view-btn"} sx={{ right: "36px" }}>
-													<Badge badgeContent={20} color="secondary">
+													<Badge
+														badgeContent={product.productViews}
+														color="secondary"
+													>
 														<RemoveRedEyeIcon
 															sx={{
-																color: 20 ? "gray" : "white",
+																color:
+																	product.productViews > 0 ? "white" : "gray",
 															}}
 														/>
 													</Badge>
@@ -132,7 +137,7 @@ export default function Products() {
 												</span>
 												<div className={"product-desc"}>
 													<MonetizationOnIcon />
-													{12}
+													{product.productPrice}
 												</div>
 											</Box>
 										</Stack>

@@ -705,3 +705,21 @@ export const docs = () => {};
 
 // 82th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-08-02
+// 83th Lesson
+// Develeop ProductsPage Screen Component by retrieving data from the backend
+
+// Darsimiz rejasi:
+// 1) Products Componentida Service API'lar orqalik olinadigan ma'lumotlar asosida develop qilamiz
+// 2) Products Componentida user interaction uchun xizmat qiladigan Handeler'ni joriy etamiz
+// 3) Products Componentida productSearch objectini tashkil qilamiz va u orqali backend'dan data fetch qilish mexanizmini quramiz
+// 4) ChosenProducts Componentida service API'lar orqali backend'dan olingan ma'lumotlar asosida developing jarayonini amalga oshiramiz.
+
+// ---------------------------------------------------
+
+// 83th shu yerda yakunlandi
+// 수고 하셨습니다!

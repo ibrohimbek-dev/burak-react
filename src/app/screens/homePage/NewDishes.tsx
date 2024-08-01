@@ -19,7 +19,8 @@ const newDishesRetriever = createSelector(retrieveNewDishes, (newDishes) => ({
 }));
 
 const NewDishes = () => {
-	const { newDishes } = useSelector(newDishesRetriever);
+  const { newDishes } = useSelector(newDishesRetriever);
+  
 
 	return (
 		<div className="new-products-frame">

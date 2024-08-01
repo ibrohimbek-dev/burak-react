@@ -4,7 +4,7 @@ import { Product } from "./product";
 // REACT APP STATE:
 export interface AppRootState {
 	homePage: HomePageState;
-	productPage: ProductsPageState;
+	productsPage: ProductsPageState;
 }
 
 // HOME PAGE INTERFACES:

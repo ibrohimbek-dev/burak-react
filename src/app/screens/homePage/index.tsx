@@ -33,27 +33,23 @@ const HomePage = () => {
 		const memberService = new MemberService();
 
 		productService
-			.getProducts({
+			.getAllProducts({
 				page: 1,
 				limit: 4,
 				order: "productViews",
 				productCollection: ProductCollection.DISH,
 			})
-			.then((data) => {
-				setPopularDishes(data);
-			})
+			.then((data) => setPopularDishes(data))
 			.catch((err) => console.log("Error on data setPopularDishes =>", err));
 
 		productService
-			.getProducts({
+			.getAllProducts({
 				page: 1,
-				limit: 8,
+				limit: 4,
 				order: "createdAt",
 				productCollection: ProductCollection.DISH,
 			})
-			.then((data) => {
-				setNewDishes(data);
-			})
+			.then((data) => setNewDishes(data))
 			.catch((err) => console.log("Error on data setNewDishes =>", err));
 
 		memberService
