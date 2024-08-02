@@ -18,7 +18,7 @@ export interface HomePageState {
 // SAVOL3 => Nega yoki null? Nega so'roq emas? '?'
 export interface ProductsPageState {
 	restaurant: Member | null;
-	chosenProduct: Product[] | null;
+	chosenProduct: Product | null;
 	products: Product[];
 }
 

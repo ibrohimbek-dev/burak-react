@@ -721,5 +721,7 @@ export const docs = () => {};
 
 // ---------------------------------------------------
 
+
+// await axios.get(url, { withCredentials: true }); => Server aynan kim murojaat etayotganligi to'g'risida ma'lumotga ega bo'lish mantig'i
 // 83th shu yerda yakunlandi
 // 수고 하셨습니다!

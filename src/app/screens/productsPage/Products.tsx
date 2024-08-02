@@ -16,16 +16,14 @@ import { ProductCollection } from "../../../lib/enums/product.enum";
 
 import { Dispatch } from "@reduxjs/toolkit";
 import { Product, ProductInquiry } from "../../../lib/types/product";
-import { setChosenProduct, setProducts, setRestaurant } from "./slice";
+import {setProducts } from "./slice";
 import { useDispatch } from "react-redux";
 import ProductService from "../../services/ProductService";
 import { useHistory } from "react-router-dom";
 
 // SAVOL3 => Nega biz slice & selectorni Product.tsx'da yozdik, index.tsx'da emas?
 // REDUX SLICE & SELECTOR
-const actionDispatch = (dispatch: Dispatch) => ({
-	setRestaurant: (data: Product[]) => dispatch(setRestaurant(data)),
-	setChosenProduct: (data: Product[]) => dispatch(setChosenProduct(data)),
+const actionDispatch = (dispatch: Dispatch) => ({	
 	setProducts: (data: Product[]) => dispatch(setProducts(data)),
 });
 
@@ -37,9 +35,7 @@ export default function Products() {
 	const { products } = useSelector(productsRetriever);
 	const history = useHistory();
 
-	const { setRestaurant, setChosenProduct, setProducts } = actionDispatch(
-		useDispatch()
-	);
+	const { setProducts } = actionDispatch(useDispatch());
 
 	const [productSearch, setProductSearch] = useState<ProductInquiry>({
 		page: 1,
