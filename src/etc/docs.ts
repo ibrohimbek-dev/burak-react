@@ -681,7 +681,7 @@ export const docs = () => {};
 
 // ---------------------------------------------------
 
-// screen componentlarda backenddan kelgan ma'lumotni redux'ga joylab
+// Screen componentlarda backenddan kelgan ma'lumotni redux'ga joylab
 // ularni sectional componentda chaqirib ishlatishimiz mumkin.
 
 

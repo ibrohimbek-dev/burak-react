@@ -15,8 +15,6 @@ import { useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
 import { Product } from "../../../lib/types/product";
 
-// SAVOL2 => createSelector'ni qaysi package'dan chaqirib ishlatish kerak?
-// import { createSelector } from "@reduxjs/toolkit";
 
 
 // REDUX SELECTOR:

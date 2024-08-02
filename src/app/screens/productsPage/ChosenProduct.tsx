@@ -69,8 +69,9 @@ export default function ChosenProduct() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [productId]);
 
-	if (!chosenProduct) return null;
-
+  if (!chosenProduct) return null;
+  
+    
 	return (
 		<div className={"chosen-product"}>
 			<Box className={"title"}>Product Detail</Box>

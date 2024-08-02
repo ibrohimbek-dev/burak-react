@@ -8,6 +8,7 @@ import { createSelector } from "@reduxjs/toolkit";
 import { retrieveTopUsers } from "./selector";
 import { useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
+import { Member } from "../../../lib/types/member";
 
 const topUsersRetriever = createSelector(retrieveTopUsers, (topUsers) => ({
 	topUsers,
@@ -15,7 +16,7 @@ const topUsersRetriever = createSelector(retrieveTopUsers, (topUsers) => ({
 
 export default function ActiveUsers() {
 	const { topUsers } = useSelector(topUsersRetriever);
-	
+
 	return (
 		<div className="active-users-frame">
 			<Container>
@@ -24,8 +25,10 @@ export default function ActiveUsers() {
 					<Stack className="cards-frame">
 						<CssVarsProvider>
 							{topUsers.length > 0 ? (
-								topUsers.map((user) => {
-									const imagePath = `${serverApi}/${user.memberImage}`;
+								topUsers.map((user: Member) => {
+									const imagePath = user.memberImage
+										? `${serverApi}/${user.memberImage}`
+										: "/icons/default-user.svg";
 
 									return (
 										<Card key={user._id} variant="outlined" className="card">
