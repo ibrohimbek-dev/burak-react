@@ -21,6 +21,7 @@ import MemberService from "../../services/MemberServce";
 import { Member } from "../../../lib/types/member";
 import { useDispatch, useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
+import { CartItem } from "../../../lib/types/search";
 
 // REDUX SLICE & SELECTOR
 //  => setRestaurant nomlari bir xil bo'lsa, slice.ts tarkibidagi methodlar bilan almashib ketmaydimi?
@@ -43,7 +44,13 @@ const restaurantRetriever = createSelector(
 	})
 );
 
-export default function ChosenProduct() {
+interface ProductsPageProps {
+	onAdd: (item: CartItem) => void;
+}
+
+export default function ChosenProduct(props: ProductsPageProps) {
+	const { onAdd } = props;
+
 	const { productId } = useParams<{ productId: string }>();
 	const { setRestaurant, setChosenProduct } = actionDispatch(useDispatch());
 

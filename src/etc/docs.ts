@@ -725,3 +725,24 @@ export const docs = () => {};
 // await axios.get(url, { withCredentials: true }); => Server aynan kim murojaat etayotganligi to'g'risida ma'lumotga ega bo'lish mantig'i
 // 83th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-08-06
+// 84th Lesson
+// Develop basket business logic
+
+// Darsimiz rejasi:
+// 1) Basketimizga yangi productlar qo'shish mantiqini develop qilaimz
+// 2) Basketimizning mantig'ini hooklar orqalik amalga oshiramiz
+// 3) Basketimiz bilan bog'liq boshqa mantiqlarimizni develop qilamiz
+
+// ---------------------------------------------------
+
+
+// e.stopPropagation() => Ushbu mantiq bizga childni parentiga tegishlik bo'lgan
+// mantiqlarda halos qilishga yordam beradi.
+
+// 84th shu yerda yakunlandi
+// 수고 하셨습니다!

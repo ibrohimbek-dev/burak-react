@@ -2,8 +2,14 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
+import { CartItem } from "../../../lib/types/search";
 
-const HomeNavbar = () => {
+interface HomeNavbarProps {
+	cartItems: CartItem[];
+}
+
+const HomeNavbar = (props: HomeNavbarProps) => {
+	const { cartItems } = props;
 	const authMember = 0;
 	const [count, setCount] = useState<number>(0);
 	const [value, setValue] = useState<boolean>(true);
@@ -11,8 +17,7 @@ const HomeNavbar = () => {
 	useEffect(() => {
 		setCount(count + 1);
 
-		return () => {
-		};
+		return () => {};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [value]); // This is componentDidUpdate (dependencies)
 
@@ -65,7 +70,7 @@ const HomeNavbar = () => {
 							</NavLink>
 						</Box>
 
-						<Basket />
+						<Basket cartItems={cartItems} />
 
 						{authMember ? (
 							<img

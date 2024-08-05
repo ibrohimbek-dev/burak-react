@@ -16,13 +16,14 @@ import { ProductCollection } from "../../../lib/enums/product.enum";
 
 import { Dispatch } from "@reduxjs/toolkit";
 import { Product, ProductInquiry } from "../../../lib/types/product";
-import {setProducts } from "./slice";
+import { setProducts } from "./slice";
 import { useDispatch } from "react-redux";
 import ProductService from "../../services/ProductService";
 import { useHistory } from "react-router-dom";
+import { CartItem } from "../../../lib/types/search";
 
 // REDUX SLICE & SELECTOR
-const actionDispatch = (dispatch: Dispatch) => ({	
+const actionDispatch = (dispatch: Dispatch) => ({
 	setProducts: (data: Product[]) => dispatch(setProducts(data)),
 });
 
@@ -30,9 +31,15 @@ const productsRetriever = createSelector(retrieveProducts, (products) => ({
 	products,
 }));
 
-export default function Products() {
+interface ProductsPageProps {
+	onAdd: (item: CartItem) => void;
+}
+
+export default function Products(props: ProductsPageProps) {
 	const { products } = useSelector(productsRetriever);
 	const history = useHistory();
+
+	const { onAdd } = props;
 
 	const { setProducts } = actionDispatch(useDispatch());
 
@@ -257,7 +264,19 @@ export default function Products() {
 												sx={{ backgroundImage: `url(${imagePath})` }}
 											>
 												<div className={"product-sale"}>{sizeVolume}</div>
-												<Button className={"shop-btn"}>
+												<Button
+													className={"shop-btn"}
+													onClick={(e) => {
+														onAdd({
+															_id: product._id,
+															quantity: 1,
+															name: product.productName,
+															price: product.productPrice,
+															image: product.productImages[0],
+														});
+														e.stopPropagation();
+													}}
+												>
 													<img
 														alt=""
 														src={"/icons/shopping-cart.svg"}
