@@ -2,8 +2,6 @@ import axios from "axios";
 import { serverApi } from "../../lib/config";
 import { Member } from "../../lib/types/member";
 
-// SAVOL2 => Class'lar ichida ham hook'larni ishlata olamizmi?
-
 class MemberService {
 	private readonly path: string;
 

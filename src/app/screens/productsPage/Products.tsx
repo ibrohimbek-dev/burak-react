@@ -21,7 +21,6 @@ import { useDispatch } from "react-redux";
 import ProductService from "../../services/ProductService";
 import { useHistory } from "react-router-dom";
 
-// SAVOL3 => Nega biz slice & selectorni Product.tsx'da yozdik, index.tsx'da emas?
 // REDUX SLICE & SELECTOR
 const actionDispatch = (dispatch: Dispatch) => ({	
 	setProducts: (data: Product[]) => dispatch(setProducts(data)),

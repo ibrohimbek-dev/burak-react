@@ -23,7 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
 
 // REDUX SLICE & SELECTOR
-// SAVOL3 => setRestaurant nomlari bir xil bo'lsa, slice.ts tarkibidagi methodlar bilan almashib ketmaydimi?
+//  => setRestaurant nomlari bir xil bo'lsa, slice.ts tarkibidagi methodlar bilan almashib ketmaydimi?
 const actionDispatch = (dispatch: Dispatch) => ({
 	setRestaurant: (data: Member) => dispatch(setRestaurant(data)),
 	setChosenProduct: (data: Product) => dispatch(setChosenProduct(data)),
@@ -69,9 +69,8 @@ export default function ChosenProduct() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [productId]);
 
-  if (!chosenProduct) return null;
-  
-    
+	if (!chosenProduct) return null;
+
 	return (
 		<div className={"chosen-product"}>
 			<Box className={"title"}>Product Detail</Box>
