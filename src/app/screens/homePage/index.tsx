@@ -11,7 +11,7 @@ import { setNewDishes, setPopularDishes, setTopUsers } from "./slice";
 import { Product } from "../../../lib/types/product";
 import ProductService from "../../services/ProductService";
 import { ProductCollection } from "../../../lib/enums/product.enum";
-import MemberService from "../../services/MemberServce";
+import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
 
 // REDUX SLICE:

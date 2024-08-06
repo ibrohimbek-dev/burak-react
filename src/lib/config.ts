@@ -1,9 +1,10 @@
- export const serverApi: string = `${process.env.REACT_APP_API_URL}`;
+export const serverApi: string = `${process.env.REACT_APP_API_URL}`;
 
+// errors.js
 export const Messages = {
-	error1: "Something went wrong!",
-	error2: "Please login first!",
-	error3: "Please fulfill all the inputs!",
-	error4: "Message is empty!",
-	error5: "Only images with jpeg, jpg, png format allowed!",
+	SOMETHING_WENT_WRONG: "Something went wrong!",
+	LOGIN_REQUIRED: "Please login first!",
+	INCOMPLETE_INPUT: "Please fulfill all the inputs!",
+	EMPTY_MESSAGE: "Message is empty!",
+	INVALID_IMAGE_FORMAT: "Only images with jpeg, jpg, png format allowed!",
 };

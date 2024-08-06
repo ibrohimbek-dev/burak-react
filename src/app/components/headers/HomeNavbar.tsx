@@ -1,27 +1,21 @@
 import { Box, Button, Container, Stack } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import { BasketProps } from "../../../lib/types/common";
+import { NavbarProps } from "../../../lib/types/common";
 
-const HomeNavbar = (props: BasketProps) => {
-	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
+const HomeNavbar = (props: NavbarProps) => {
+	const {
+		cartItems,
+		onAdd,
+		onRemove,
+		onDelete,
+		onDeleteAll,
+		setSignUpOpen,
+		setLoginOpen,
+	} = props;
 
 	const authMember = 0;
-	const [count, setCount] = useState<number>(0);
-	const [value, setValue] = useState<boolean>(true);
-
-	useEffect(() => {
-		setCount(count + 1);
-
-		return () => {};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [value]); // This is componentDidUpdate (dependencies)
-
-	// HANDLERS
-	const buttonHandler = () => {
-		setValue(!value);
-	};
 
 	return (
 		<div className="home-navbar">
@@ -83,7 +77,11 @@ const HomeNavbar = (props: BasketProps) => {
 							/>
 						) : (
 							<Box>
-								<Button variant="contained" className="login">
+								<Button
+									onClick={() => setLoginOpen(true)}
+									variant="contained"
+									className="login"
+								>
 									Login
 								</Button>
 							</Box>
@@ -95,13 +93,13 @@ const HomeNavbar = (props: BasketProps) => {
 					<Stack className="detail">
 						<Box className="head-txt">World's Most Delicious Cousinne</Box>
 						<Box className="wel-txt">The Choice, not just a choice</Box>
-						<Box className="service-txt">{count} hours service</Box>
+						<Box className="service-txt">24 hours service</Box>
 						<Box className="signup">
 							{!authMember ? (
 								<Button
 									className="signup-btn"
 									variant="contained"
-									onClick={buttonHandler}
+									onClick={() => setSignUpOpen(true)}
 								>
 									Sign Up
 								</Button>

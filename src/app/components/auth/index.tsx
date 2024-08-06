@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -6,6 +6,13 @@ import Fade from "@material-ui/core/Fade";
 import { Fab, Stack, TextField } from "@mui/material";
 import styled from "styled-components";
 import LoginIcon from "@mui/icons-material/Login";
+import { AuthModalProps, T } from "../../../lib/types/common";
+import { Messages } from "../../../lib/config";
+import { MemberInput } from "../../../lib/types/member";
+import MemberService from "../../services/MemberService";
+import { sweetErrorHandling } from "../../../lib/sweetAlert";
+
+// SAVOL => Nega type'larni alohida faylda yozmadik?
 
 const useStyles = makeStyles((theme) => ({
 	modal: {
@@ -30,18 +37,60 @@ const ModalImg = styled.img`
 	margin-left: 10px;
 `;
 
-interface AuthenticationModalProps {
-	signUpOpen: boolean;
-	loginOpen: boolean;
-	handleSignupClose: () => void;
-	handleLoginClose: () => void;
-}
-
-export default function AuthenticationModal(props: AuthenticationModalProps) {
+export default function AuthenticationModal(props: AuthModalProps) {
 	const { signUpOpen, loginOpen, handleSignupClose, handleLoginClose } = props;
 	const classes = useStyles();
 
-	/** HANDLERS **/
+	// Initialization section:
+	const [memberNick, setMemberNick] = useState<string>("");
+	const [memberPhone, setMemberPhone] = useState<string>("");
+	const [memberPassword, setMemberPassword] = useState<string>("");
+
+	// Handlers:
+	const handleUserName = (e: T) => {
+		setMemberNick(e.target.value);
+	};
+
+	const handleUserPhone = (e: T) => {
+		setMemberPhone(e.target.value);
+	};
+
+	const handleUserPassword = (e: T) => {
+		setMemberPassword(e.target.value);
+	};
+
+	const handlePasswordKeyDown = (e: T) => {
+		if (e.key === "Enter" && signUpOpen) {
+			handleSignUpRequest().then();
+		}
+	};
+
+	// SAVOL => Nega bu function asynchronous?
+	const handleSignUpRequest = async () => {
+		try {
+			const isFulfilled = Boolean(memberNick && memberPhone && memberPassword);
+
+			if (!isFulfilled) throw new Error(Messages.SOMETHING_WENT_WRONG);
+
+			const signUpInput: MemberInput = {
+				memberNick: memberNick,
+				memberPhone: memberPhone,
+				memberPassword: memberPassword,
+			};
+
+			const memberService = new MemberService();
+
+			const result = await memberService.userSignUp(signUpInput);
+
+			// SAVOL => Nega .then() ishlatyapmiz?
+			handleSignupClose();
+		} catch (err: any) {
+      sweetErrorHandling(err.message).catch((error) => {
+        console.log("Error on sweetErrorHandling =>", error);
+			});
+      handleSignupClose();			
+		}
+	};
 
 	return (
 		<div>
@@ -71,22 +120,28 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
 								id="outlined-basic"
 								label="username"
 								variant="outlined"
+								onChange={handleUserName}
 							/>
 							<TextField
 								sx={{ my: "17px" }}
 								id="outlined-basic"
 								label="phone number"
 								variant="outlined"
+								onChange={handleUserPhone}
+								type="number"
 							/>
 							<TextField
 								id="outlined-basic"
 								label="password"
 								variant="outlined"
+								onChange={handleUserPassword}
+								onKeyDown={handlePasswordKeyDown}
 							/>
 							<Fab
 								sx={{ marginTop: "30px", width: "120px" }}
 								variant="extended"
 								color="primary"
+								onClick={handleSignUpRequest}
 							>
 								<LoginIcon sx={{ mr: 1 }} />
 								Signup

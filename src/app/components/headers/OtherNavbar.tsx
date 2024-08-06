@@ -2,13 +2,14 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import { BasketProps } from "../../../lib/types/common";
+import { NavbarProps } from "../../../lib/types/common";
 
 // SAVOL => Nega type'lar uchun alohida type interface hosil qilib ishlatmadik?
-const OtherNavbar = (props: BasketProps) => {
-	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
+const OtherNavbar = (props: NavbarProps) => {
+	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll, setLoginOpen } =
+		props;
 
-	const authMember = 1;
+	const authMember = 0;
 
 	return (
 		<div className="other-navbar">
@@ -68,7 +69,11 @@ const OtherNavbar = (props: BasketProps) => {
 							/>
 						) : (
 							<Box>
-								<Button variant="contained" className="login">
+								<Button
+									onClick={() => setLoginOpen(true)}
+									variant="contained"
+									className="login"
+								>
 									Login
 								</Button>
 							</Box>

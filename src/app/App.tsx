@@ -21,7 +21,7 @@ const App = () => {
 	const location = useLocation();
 	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = useBasktet();
 	const [signUpOpen, setSignUpOpen] = useState<boolean>(false);
-	const [loginOpen, setLoginOpen] = useState<boolean>(true);
+	const [loginOpen, setLoginOpen] = useState<boolean>(false);
 
 	// Auth Handlers:
 	const handleSignupClose = () => setSignUpOpen(false);
@@ -36,6 +36,8 @@ const App = () => {
 					onRemove={onRemove}
 					onDelete={onDelete}
 					onDeleteAll={onDeleteAll}
+					setSignUpOpen={setSignUpOpen}
+					setLoginOpen={setLoginOpen}
 				/>
 			) : (
 				<OtherNavbar
@@ -44,6 +46,8 @@ const App = () => {
 					onRemove={onRemove}
 					onDelete={onDelete}
 					onDeleteAll={onDeleteAll}
+					setSignUpOpen={setSignUpOpen}
+					setLoginOpen={setLoginOpen}
 				/>
 			)}
 			<Switch>
