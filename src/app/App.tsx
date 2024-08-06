@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { Help, HomePage, Orders, Products, Users } from "./screens";
-import { Footer, HomeNavbar, OtherNavbar } from "./components";
+import { AuthModal, Footer, HomeNavbar, OtherNavbar } from "./components";
 import useBasktet from "./hooks/useBasket";
 
 import "../css/app.css";
@@ -18,8 +18,14 @@ import "../css/help-page.css";
 // SAVOL => Nega biz local storage'dan kelgan ma'lumotlarni redux store'ga saqlamayapmiz?
 
 const App = () => {
-	const location = useLocation();	
+	const location = useLocation();
 	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = useBasktet();
+	const [signUpOpen, setSignUpOpen] = useState<boolean>(false);
+	const [loginOpen, setLoginOpen] = useState<boolean>(true);
+
+	// Auth Handlers:
+	const handleSignupClose = () => setSignUpOpen(false);
+	const handleLoginClose = () => setLoginOpen(false);
 
 	return (
 		<>
@@ -59,6 +65,13 @@ const App = () => {
 			</Switch>
 
 			<Footer />
+
+			<AuthModal
+				signUpOpen={signUpOpen}
+				loginOpen={loginOpen}
+				handleLoginClose={handleLoginClose}
+				handleSignupClose={handleSignupClose}
+			/>
 		</>
 	);
 };

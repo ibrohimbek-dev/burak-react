@@ -758,3 +758,23 @@ export const docs = () => {};
 
 // 84th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-08-06
+// 85th Lesson
+// Develop Front-end authentication process
+
+// Darsimiz rejasi:
+// 1) Authentication modal Componenti publishingini amalga oshiramiz
+// 2) Authentication jarayonini siz bilan birga develop qilamiz
+
+// ---------------------------------------------------
+
+
+// sweetalert2 => package'i orqalik biz, chiroylik va qulay UI'ga ega bo'lgan
+// alert'larni hosil qilishimiz mumkin.
+
+// 85th shu yerda yakunlandi
+// 수고 하셨습니다!
