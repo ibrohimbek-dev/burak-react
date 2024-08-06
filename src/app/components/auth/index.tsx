@@ -8,7 +8,7 @@ import styled from "styled-components";
 import LoginIcon from "@mui/icons-material/Login";
 import { AuthModalProps, T } from "../../../lib/types/common";
 import { Messages } from "../../../lib/config";
-import { MemberInput } from "../../../lib/types/member";
+import { LoginInput, MemberInput } from "../../../lib/types/member";
 import MemberService from "../../services/MemberService";
 import { sweetErrorHandling } from "../../../lib/sweetAlert";
 
@@ -62,15 +62,17 @@ export default function AuthenticationModal(props: AuthModalProps) {
 	const handlePasswordKeyDown = (e: T) => {
 		if (e.key === "Enter" && signUpOpen) {
 			handleSignUpRequest().then();
+		} else if (e.key === "Enter" && loginOpen) {
+			handleLoginRequest().then();
 		}
 	};
 
-	// SAVOL => Nega bu function asynchronous?
+	// SAVOL => Nega bu function asynchronous? then().catch() emas
 	const handleSignUpRequest = async () => {
 		try {
-			const isFulfilled = Boolean(memberNick && memberPhone && memberPassword);
-
-			if (!isFulfilled) throw new Error(Messages.SOMETHING_WENT_WRONG);
+			const isFulfill =
+				memberNick !== "" && memberPhone !== "" && memberPassword !== "";
+			if (!isFulfill) throw new Error(Messages.INCOMPLETE_INPUT);
 
 			const signUpInput: MemberInput = {
 				memberNick: memberNick,
@@ -80,15 +82,39 @@ export default function AuthenticationModal(props: AuthModalProps) {
 
 			const memberService = new MemberService();
 
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			const result = await memberService.userSignUp(signUpInput);
+
+			// Saving Authenticated user
 
 			// SAVOL => Nega .then() ishlatyapmiz?
 			handleSignupClose();
 		} catch (err: any) {
-      sweetErrorHandling(err.message).catch((error) => {
-        console.log("Error on sweetErrorHandling =>", error);
-			});
-      handleSignupClose();			
+			sweetErrorHandling(err).then();
+			handleSignupClose();
+		}
+	};
+
+	const handleLoginRequest = async () => {
+		try {
+			const isFulfill = memberNick !== "" && memberPassword !== "";
+			if (!isFulfill) throw new Error(Messages.INCOMPLETE_INPUT);
+			const loginInput: LoginInput = {
+				memberNick: memberNick,
+				memberPassword: memberPassword,
+			};
+
+			const memberService = new MemberService();
+
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			const result = await memberService.userLogin(loginInput);
+
+			// Saving Authenticated user
+
+			handleLoginClose();
+		} catch (err) {
+			handleLoginClose();
+			sweetErrorHandling(err).then();
 		}
 	};
 
@@ -183,17 +209,21 @@ export default function AuthenticationModal(props: AuthModalProps) {
 								label="username"
 								variant="outlined"
 								sx={{ my: "10px" }}
+								onChange={handleUserName}
 							/>
 							<TextField
 								id={"outlined-basic"}
 								label={"password"}
 								variant={"outlined"}
 								type={"password"}
+								onChange={handleUserPassword}
+								onKeyDown={handlePasswordKeyDown}
 							/>
 							<Fab
 								sx={{ marginTop: "27px", width: "120px" }}
 								variant={"extended"}
 								color={"primary"}
+								onClick={handleLoginRequest}
 							>
 								<LoginIcon sx={{ mr: 1 }} />
 								Login
