@@ -744,5 +744,17 @@ export const docs = () => {};
 // e.stopPropagation() => Ushbu mantiq bizga childni parentiga tegishlik bo'lgan
 // mantiqlarda halos qilishga yordam beradi.
 
+
+// Customized hooklar tarkibida biz osongina asynchronous operatsiyalarini osongina
+// bajara olamiz.
+
+// Customized Hooklardan foydalanishning afzalliklari:
+// 1) Ma'lumotlarni shunchaki hook'larga biriktirib qo'ya olamiz
+// 2) Clean Code
+// 3) asynchronous operatsiylarini osonlikcha bajara olamiz
+
+// Customized Hook'lar faylini ochishda doim use... so'zidan boshlab camel case'ga
+// asosan ochamiz.
+
 // 84th shu yerda yakunlandi
 // 수고 하셨습니다!

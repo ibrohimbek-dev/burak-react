@@ -21,7 +21,7 @@ import MemberService from "../../services/MemberServce";
 import { Member } from "../../../lib/types/member";
 import { useDispatch, useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
-import { CartItem } from "../../../lib/types/search";
+import { ProductsPageProps } from "../../../lib/types/common";
 
 // REDUX SLICE & SELECTOR
 //  => setRestaurant nomlari bir xil bo'lsa, slice.ts tarkibidagi methodlar bilan almashib ketmaydimi?
@@ -43,10 +43,6 @@ const restaurantRetriever = createSelector(
 		restaurant,
 	})
 );
-
-interface ProductsPageProps {
-	onAdd: (item: CartItem) => void;
-}
 
 export default function ChosenProduct(props: ProductsPageProps) {
 	const { onAdd } = props;
@@ -129,7 +125,22 @@ export default function ChosenProduct(props: ProductsPageProps) {
 							<span>${chosenProduct?.productPrice}</span>
 						</div>
 						<div className={"button-box"}>
-							<Button variant="contained">Add To Basket</Button>
+							<Button
+								onClick={(e) => {
+									onAdd({
+										_id: chosenProduct._id,
+										quantity: 1,
+										name: chosenProduct.productName,
+										price: chosenProduct.productPrice,
+										image: chosenProduct.productImages[0],
+									});
+									// SAVOL => Quyida e.stopPropagation()'ni olib tashlasak ham bo'ladimi?
+									e.stopPropagation();
+								}}
+								variant="contained"
+							>
+								Add To Basket
+							</Button>
 						</div>
 					</Box>
 				</Stack>

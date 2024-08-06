@@ -2,14 +2,12 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import { CartItem } from "../../../lib/types/search";
+import { BasketProps } from "../../../lib/types/common";
 
-interface OtherNavbarProps {
-	cartItems: CartItem[];
-}
+// SAVOL => Nega type'lar uchun alohida type interface hosil qilib ishlatmadik?
+const OtherNavbar = (props: BasketProps) => {
+	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
 
-const OtherNavbar = (props: OtherNavbarProps) => {
-	const { cartItems } = props;
 	const authMember = 1;
 
 	return (
@@ -54,7 +52,13 @@ const OtherNavbar = (props: OtherNavbarProps) => {
 							</NavLink>
 						</Box>
 
-						<Basket cartItems={cartItems} />
+						<Basket
+							cartItems={cartItems}
+							onAdd={onAdd}
+							onRemove={onRemove}
+							onDelete={onDelete}
+							onDeleteAll={onDeleteAll}
+						/>
 
 						{authMember ? (
 							<img

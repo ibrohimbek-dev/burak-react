@@ -2,11 +2,8 @@ import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import ChosenProduct from "./ChosenProduct";
 import Products from "./Products";
-import { CartItem } from "../../../lib/types/search";
+import { ProductsPageProps } from "../../../lib/types/common";
 
-interface ProductsPageProps {
-	onAdd: (item: CartItem) => void;
-}
 
 const ProductPage = (props: ProductsPageProps) => {
 	const { onAdd } = props;

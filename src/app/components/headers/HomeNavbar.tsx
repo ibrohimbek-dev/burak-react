@@ -2,14 +2,11 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import { CartItem } from "../../../lib/types/search";
+import { BasketProps } from "../../../lib/types/common";
 
-interface HomeNavbarProps {
-	cartItems: CartItem[];
-}
+const HomeNavbar = (props: BasketProps) => {
+	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
 
-const HomeNavbar = (props: HomeNavbarProps) => {
-	const { cartItems } = props;
 	const authMember = 0;
 	const [count, setCount] = useState<number>(0);
 	const [value, setValue] = useState<boolean>(true);
@@ -70,7 +67,13 @@ const HomeNavbar = (props: HomeNavbarProps) => {
 							</NavLink>
 						</Box>
 
-						<Basket cartItems={cartItems} />
+						<Basket
+							cartItems={cartItems}
+							onAdd={onAdd}
+							onRemove={onRemove}
+							onDelete={onDelete}
+							onDeleteAll={onDeleteAll}
+						/>
 
 						{authMember ? (
 							<img
