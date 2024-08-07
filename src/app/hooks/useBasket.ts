@@ -35,7 +35,6 @@ const useBasktet = () => {
 		});
 
 		if (exist.quantity === 1) {
-			// SAVOL => Nega filter & map & find methodlarini ishlatyapmiz?
 			const cartUpdate = cartItems.filter((item: CartItem) => {
 				return item._id !== input._id;
 			});

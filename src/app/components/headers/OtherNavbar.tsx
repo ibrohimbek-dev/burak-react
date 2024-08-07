@@ -1,15 +1,34 @@
-import { Box, Button, Container, Stack } from "@mui/material";
+import {
+	Box,
+	Button,
+	Container,
+	ListItemIcon,
+	Menu,
+	MenuItem,
+	Stack,
+} from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
+import { useGlobals } from "../../hooks/useGlobals";
+import { Logout } from "@mui/icons-material";
+import { serverApi } from "../../../lib/config";
 import { NavbarProps } from "../../../lib/types/common";
 
-// SAVOL => Nega type'lar uchun alohida type interface hosil qilib ishlatmadik?
 const OtherNavbar = (props: NavbarProps) => {
-	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll, setLoginOpen } =
-		props;
-
-	const authMember = 0;
+	const {
+		cartItems,
+		onAdd,
+		onRemove,
+		onDelete,
+		onDeleteAll,
+		setLoginOpen,
+		handleLogoutClick,
+		handleCloseLogout,
+		anchorEl,
+		handleLogoutRequest,
+	} = props;
+	const { authMember } = useGlobals();
 
 	return (
 		<div className="other-navbar">
@@ -23,7 +42,7 @@ const OtherNavbar = (props: NavbarProps) => {
 
 					<Stack className="links">
 						<Box className="hover-line">
-							<NavLink to={"/"}>HomePage</NavLink>
+							<NavLink to={"/"}>Home</NavLink>
 						</Box>
 
 						<Box className="hover-line">
@@ -40,7 +59,7 @@ const OtherNavbar = (props: NavbarProps) => {
 									</NavLink>
 								</Box>
 								<Box className="hover-line">
-									<NavLink activeClassName="underline" to={"/members-page"}>
+									<NavLink activeClassName="underline" to={"/members/member"}>
 										My Page
 									</NavLink>
 								</Box>
@@ -52,7 +71,6 @@ const OtherNavbar = (props: NavbarProps) => {
 								Help
 							</NavLink>
 						</Box>
-
 						<Basket
 							cartItems={cartItems}
 							onAdd={onAdd}
@@ -61,23 +79,70 @@ const OtherNavbar = (props: NavbarProps) => {
 							onDeleteAll={onDeleteAll}
 						/>
 
-						{authMember ? (
-							<img
-								className="user-avatar"
-								src={"/icons/default-user.svg"}
-								alt="user"
-							/>
-						) : (
+						{!authMember ? (
 							<Box>
 								<Button
-									onClick={() => setLoginOpen(true)}
-									variant="contained"
 									className="login"
+									variant="contained"
+									onClick={() => setLoginOpen(true)}
 								>
 									Login
 								</Button>
 							</Box>
+						) : (
+							<img
+								className="user-avatar"
+								src={
+									authMember?.memberImage
+										? `${serverApi}/${authMember?.memberImage}`
+										: "/icons/default-user.svg"
+								}
+								onClick={handleLogoutClick}
+								alt="user.img"
+							/>
 						)}
+						<Menu
+							onClick={handleCloseLogout}
+							onClose={handleCloseLogout}
+							id="account-menu"
+							anchorEl={anchorEl}
+							open={Boolean(anchorEl)}
+							PaperProps={{
+								elevation: 0,
+								sx: {
+									overflow: "visible",
+									filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+									mt: 1.5,
+									"& .MuiAvatar-root": {
+										width: 32,
+										height: 32,
+										ml: -0.5,
+										mr: 1,
+									},
+									"&:before": {
+										content: '""',
+										display: "block",
+										position: "absolute",
+										top: 0,
+										right: 14,
+										width: 10,
+										height: 10,
+										bgcolor: "background.paper",
+										transform: "translateY(-50%) rotate(45deg)",
+										zIndex: 0,
+									},
+								},
+							}}
+							transformOrigin={{ horizontal: "right", vertical: "top" }}
+							anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+						>
+							<MenuItem onClick={handleLogoutRequest}>
+								<ListItemIcon>
+									<Logout fontSize="small" style={{ color: "blue" }} />
+								</ListItemIcon>
+								Logout
+							</MenuItem>
+						</Menu>
 					</Stack>
 				</Stack>
 			</Container>

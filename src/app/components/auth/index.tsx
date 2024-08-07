@@ -11,6 +11,7 @@ import { Messages } from "../../../lib/config";
 import { LoginInput, MemberInput } from "../../../lib/types/member";
 import MemberService from "../../services/MemberService";
 import { sweetErrorHandling } from "../../../lib/sweetAlert";
+import { useGlobals } from "../../hooks/useGlobals";
 
 // SAVOL => Nega type'larni alohida faylda yozmadik?
 
@@ -45,6 +46,7 @@ export default function AuthenticationModal(props: AuthModalProps) {
 	const [memberNick, setMemberNick] = useState<string>("");
 	const [memberPhone, setMemberPhone] = useState<string>("");
 	const [memberPassword, setMemberPassword] = useState<string>("");
+	const { setAuthMember } = useGlobals();
 
 	// Handlers:
 	const handleUserName = (e: T) => {
@@ -67,7 +69,6 @@ export default function AuthenticationModal(props: AuthModalProps) {
 		}
 	};
 
-	// SAVOL => Nega bu function asynchronous? then().catch() emas
 	const handleSignUpRequest = async () => {
 		try {
 			const isFulfill =
@@ -82,12 +83,10 @@ export default function AuthenticationModal(props: AuthModalProps) {
 
 			const memberService = new MemberService();
 
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			const result = await memberService.userSignUp(signUpInput);
 
-			// Saving Authenticated user
+			setAuthMember(result);
 
-			// SAVOL => Nega .then() ishlatyapmiz?
 			handleSignupClose();
 		} catch (err: any) {
 			sweetErrorHandling(err).then();
@@ -106,10 +105,9 @@ export default function AuthenticationModal(props: AuthModalProps) {
 
 			const memberService = new MemberService();
 
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			const result = await memberService.userLogin(loginInput);
 
-			// Saving Authenticated user
+			setAuthMember(result);
 
 			handleLoginClose();
 		} catch (err) {

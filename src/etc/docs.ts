@@ -778,3 +778,58 @@ export const docs = () => {};
 
 // 85th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+
+// =================================================================
+
+// 2024-08-07
+// 86th Lesson
+// Develop Authentication process
+
+// Darsimiz rejasi:
+// 1) Global variable'larni hosil qilish uchun customized hook'lardan foydalanamiz
+// 2) Hosil qilgan customized hook'larimizda context integratsiyasini amalga oshiramiz
+// 3) User'larimiz authenticated bo'lganda hook'larimizni ishlatishni o'rganamiz
+// 4) Logout jarayonini develop qilamiz
+
+// ---------------------------------------------------
+
+
+// await axios.post(url, input, { withCredentials: true }) =>
+// Bu shart bizga backend'dan frontend'imizga kim murojaat qilayotganligini aniqlab
+// cookie'larni joylab beradi.
+
+
+// Agar bizning project ikki hil domain'da bo'lsa va ular https protocol'ida bo'lmasa
+// unday holatda cookie'lar oldi-berdisi amalga oshmaydi. Hattoki { withCredentials: true } bo'lganda ham.
+// Demak, { withCredentials: true } bo'lishini o'zi yetarlik emas, ma'lum bir shartlardan birigina
+// bajarilishi mumkin xolos.
+
+// Lekin, hozirgi loyihamiz, o'zimizning mashinamizda run bo'layotganligi uchun, hech qanday muammo
+// sodir bo'lmaydi.
+
+
+// Cookies => package bizga browser'imizdagi cookie'larni qo'lga olishimizga imkon beradi
+
+
+// { children } => Biz wrap qilayotgan narsamizni ichidagi mantiq
+
+
+// Biz global context'ni hosil qilish uchun, asosiy index.tsx faylida
+// barcha integratsiya qilingan mantiqlarni, uni ichiga wrap qilishimiz kerak bo'ladi.
+
+
+// Biz quyidagi mantiqlar orqalik, redux mantig'ini ishlatmayapmiz, biz
+// context mantig'ini o'rganish maqsadida, undan faol foydalanypamiz. Ya'ni
+// context'lar orqalik simple storage'ni ham hosil qilsak bo'ladi.
+
+// context bizga redux singarin mukammal storage'ni hosil qilib bermaydi, lekin
+// simple data'larni handle qilib beradi.
+
+
+// Biz global context tarkibida hosil qilgan har qanday mantiqlarimizni
+// loyihamizning istalgan qismida ishlata olamiz.
+
+// 86th shu yerda yakunlandi
+// 수고 하셨습니다!
+

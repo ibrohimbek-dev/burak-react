@@ -2,11 +2,11 @@
 	"name": "burak-react",
 	"version": "0.1.0",
 	"private": true,
-  "description": "This is burak react project by Brian",
-  "author": "Ibrohimbek Alisherov (Brian)",
+	"description": "This is burak react project by Brian",
+	"author": "Ibrohimbek Alisherov (Brian)",
 	"scripts": {
-		"start": "react-scripts start",		
-		"build": "react-scripts build",		
+		"start": "react-scripts start",
+		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
