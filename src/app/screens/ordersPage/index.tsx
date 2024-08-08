@@ -15,6 +15,9 @@ import { useDispatch } from "react-redux";
 import { OrderStatus } from "../../../lib/enums/order.enum";
 import OrderService from "../../services/OrderService";
 import { useGlobals } from "../../hooks/useGlobals";
+import { useHistory } from "react-router-dom";
+import { serverApi } from "../../../lib/config";
+import { MemberType } from "../../../lib/enums/member.enum";
 
 // REDUX SLICE & SELECTOR:
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -29,7 +32,19 @@ const OrdersPage = () => {
 	const [value, setValue] = useState("1");
 	// SAVOL => setOrderInquiry() nega ishlatilmadi?
 
-	const { orderBuilder } = useGlobals();
+	const history = useHistory();
+	const { orderBuilder, authMember } = useGlobals();
+
+	if (!authMember) history.push("/");
+
+	const memberImage = authMember?.memberImage
+		? `${serverApi}/${authMember.memberImage}`
+		: "/icons/default-user.svg";
+
+	const memberType =
+		authMember?.memberType === MemberType.RESTAURANT
+			? "/icons/restaurant.svg"
+			: "/icons/user-badge.svg";
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
@@ -96,31 +111,29 @@ const OrdersPage = () => {
 					<Box className="order-info-box">
 						<Box className="member-box">
 							<div className="order-user-img">
-								<img
-									alt=""
-									src={"/mit-students/brian.webp"}
-									className="order-user-avatar"
-								/>
+								<img alt="" src={memberImage} className="order-user-avatar" />
 
 								<div className="order-user-icon-box">
 									<img
 										alt=""
-										src={"/icons/restaurant.svg"}
+										src={memberType}
 										className="order-user-prof-img"
 									/>
 								</div>
 							</div>
 
-							<span className="order-user-name">Brian</span>
-							<span className="order-user-name">Restaurant</span>
+							<span className="order-user-name">{authMember?.memberNick}</span>
+							<span className="order-user-name">{authMember?.memberType}</span>
 						</Box>
-						<Box className="linea"></Box>
+						<Box className="linear"></Box>
 
 						<Box className="order-user-address">
 							<div style={{ display: "flex" }}>
 								<LocationOnIcon />
 							</div>
-							<div className="spec-address-txt">Daegu, Geyongsan-si</div>
+							<div className="spec-address-txt">
+								{authMember?.memberAddress}
+							</div>
 						</Box>
 					</Box>
 

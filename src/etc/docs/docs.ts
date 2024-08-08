@@ -843,7 +843,20 @@ export const docs = () => {};
 // 수고 하셨습니다!
 
 
-// 89th darsga keldim...
+// =================================================================
+
+// 2024-08-08
+// 89th Lesson
+// Develop UserPage Screen Component
+
+// Darsimiz rejasi:
+// 1) UserPage Screen Componentini business mantiqini develop qilamiz
+// 2) OrdersPage'ni user'ga daxldor bo'lgan mantiqini yakunlaymiz
+
+// ---------------------------------------------------
+
+// 89th shu yerda yakunlandi
+// 수고 하셨습니다!
 
 
 

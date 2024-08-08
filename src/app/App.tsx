@@ -21,8 +21,8 @@ import { useGlobals } from "./hooks/useGlobals";
 
 const App = () => {
 	const location = useLocation();
-
-	const { setAuthMember } = useGlobals();
+  const { setAuthMember } = useGlobals();  
+	
 
 	const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = useBasktet();
 	const [signUpOpen, setSignUpOpen] = useState<boolean>(false);

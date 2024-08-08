@@ -134,8 +134,7 @@ export default function ChosenProduct(props: ProductsPageProps) {
 										price: chosenProduct.productPrice,
 										image: chosenProduct.productImages[0],
 									});
-									// SAVOL => Quyida e.stopPropagation()'ni olib tashlasak ham bo'ladimi?
-									e.stopPropagation();
+								
 								}}
 								variant="contained"
 							>

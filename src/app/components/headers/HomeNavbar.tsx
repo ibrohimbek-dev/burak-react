@@ -90,7 +90,7 @@ const HomeNavbar = (props: NavbarProps) => {
 								</Button>
 							</Box>
 						) : (
-							<img
+                <img                  
 								className="user-avatar"
 								src={
 									authMember?.memberImage
@@ -109,7 +109,8 @@ const HomeNavbar = (props: NavbarProps) => {
 							open={Boolean(anchorEl)}
 							PaperProps={{
 								elevation: 0,
-								sx: {
+                sx: {
+                  cursor: "pointer",
 									overflow: "visible",
 									filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
 									mt: 1.5,

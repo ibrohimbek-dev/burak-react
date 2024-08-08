@@ -5,8 +5,24 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Settings from "./Settings";
+import { useHistory } from "react-router-dom";
+import { useGlobals } from "../../hooks/useGlobals";
+import { serverApi } from "../../../lib/config";
+import { MemberType } from "../../../lib/enums/member.enum";
 
 const UserPage = () => {
+	const history = useHistory();
+	const { authMember } = useGlobals();
+
+	const memberType =
+		authMember?.memberType === MemberType.RESTAURANT
+			? "/icons/restaurant.svg"
+			: "/icons/user-badge.svg";
+
+	if (!authMember) history.push("/");
+
+	// SAVOL => useNavigate() bilan useHistory()'ni nima farqi bor?
+
 	return (
 		<div className="user-page">
 			<Container>
@@ -30,17 +46,29 @@ const UserPage = () => {
 								<div className="order-user-img">
 									<img
 										alt=""
-										src="/mit-students/brian.webp"
+										src={
+											authMember?.memberImage
+												? `${serverApi}/${authMember?.memberImage}`
+												: "/icons/default-user.svg"
+										}
 										className="order-user-avatar"
 									/>
 									<div className="order-user-icon-box">
-										<img alt="" src="/icons/user-badge.svg" />
+										<img alt="" src={memberType} />
 									</div>
 								</div>
 
-								<span className="order-user-name">Ibroihmbek</span>
-								<span className="order-user-prof">Restaurant</span>
-								<span className="order-user-prof">Daegu, Geyongsan-si</span>
+								<span className="order-user-name">
+									{authMember?.memberNick}
+								</span>
+								<span className="order-user-prof">
+									{authMember?.memberType}
+								</span>
+								<span className="order-user-prof">
+									{authMember?.memberAddress
+										? authMember.memberAddress
+										: "No address"}
+								</span>
 							</Box>
 
 							<Box className="user-media-box">
@@ -50,7 +78,11 @@ const UserPage = () => {
 								<YouTubeIcon />
 							</Box>
 
-							<p className="user-desc">Enjoy Life!</p>
+							<p className="user-desc">
+								{authMember?.memberDesc
+									? authMember.memberDesc
+									: "No description"}
+							</p>
 						</Box>
 					</Stack>
 				</Stack>
