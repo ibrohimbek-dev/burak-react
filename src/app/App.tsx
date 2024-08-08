@@ -14,13 +14,10 @@ import "../css/chosen-product.css";
 import "../css/order.css";
 import "../css/user-page.css";
 import "../css/help-page.css";
-import { T } from "../lib/types/common";
 import { sweetErrorHandling, sweetTopSuccessAlert } from "../lib/sweetAlert";
 import { Messages } from "../lib/config";
 import MemberService from "./services/MemberService";
 import { useGlobals } from "./hooks/useGlobals";
-
-// SAVOL => Nega biz local storage'dan kelgan ma'lumotlarni redux store'ga saqlamayapmiz?
 
 const App = () => {
 	const location = useLocation();

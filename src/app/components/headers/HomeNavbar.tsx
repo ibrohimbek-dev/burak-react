@@ -60,8 +60,8 @@ const HomeNavbar = (props: NavbarProps) => {
 									</NavLink>
 								</Box>
 								<Box className={"hover-line"}>
-									<NavLink to="/orders" activeClassName="underline">
-										Orders
+									<NavLink to="/members-page" activeClassName="underline">
+										My Page
 									</NavLink>
 								</Box>
 							</>

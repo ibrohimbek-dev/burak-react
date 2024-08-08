@@ -13,7 +13,6 @@ import MemberService from "../../services/MemberService";
 import { sweetErrorHandling } from "../../../lib/sweetAlert";
 import { useGlobals } from "../../hooks/useGlobals";
 
-// SAVOL => Nega type'larni alohida faylda yozmadik?
 
 const useStyles = makeStyles((theme) => ({
 	modal: {
@@ -59,7 +58,8 @@ export default function AuthenticationModal(props: AuthModalProps) {
 
 	const handleUserPassword = (e: T) => {
 		setMemberPassword(e.target.value);
-	};
+  };
+  
 
 	const handlePasswordKeyDown = (e: T) => {
 		if (e.key === "Enter" && signUpOpen) {
@@ -67,7 +67,8 @@ export default function AuthenticationModal(props: AuthModalProps) {
 		} else if (e.key === "Enter" && loginOpen) {
 			handleLoginRequest().then();
 		}
-	};
+  };
+  
 
 	const handleSignUpRequest = async () => {
 		try {
@@ -92,7 +93,8 @@ export default function AuthenticationModal(props: AuthModalProps) {
 			sweetErrorHandling(err).then();
 			handleSignupClose();
 		}
-	};
+  };
+  
 
 	const handleLoginRequest = async () => {
 		try {
@@ -114,7 +116,9 @@ export default function AuthenticationModal(props: AuthModalProps) {
 			handleLoginClose();
 			sweetErrorHandling(err).then();
 		}
-	};
+  };
+  
+  
 
 	return (
 		<div>

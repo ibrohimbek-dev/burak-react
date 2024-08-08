@@ -13,7 +13,6 @@ export const GlobalContext = createContext<GlobalInterface | undefined>(
 export const useGlobals = () => {
   const context = useContext(GlobalContext);
   
-  // SAVOL => context & if()
 
 	if (context === undefined) throw new Error("You should use useGlobals within Provider");
 

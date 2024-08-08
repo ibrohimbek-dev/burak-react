@@ -734,14 +734,14 @@ export const docs = () => {};
 // Develop basket business logic
 
 // Darsimiz rejasi:
-// 1) Basketimizga yangi productlar qo'shish mantiqini develop qilaimz
+// 1) Basketimizga yangi productlar qo'shish mantiqini develop qilamiz
 // 2) Basketimizning mantig'ini hooklar orqalik amalga oshiramiz
 // 3) Basketimiz bilan bog'liq boshqa mantiqlarimizni develop qilamiz
 
 // ---------------------------------------------------
 
 
-// e.stopPropagation() => Ushbu mantiq bizga childni parentiga tegishlik bo'lgan
+// e.stopPropagation() => Ushbu mantiq bizga child'ni parentiga tegishlik bo'lgan
 // mantiqlarda halos qilishga yordam beradi.
 
 
@@ -833,3 +833,20 @@ export const docs = () => {};
 // 86th shu yerda yakunlandi
 // 수고 하셨습니다!
 
+
+// =================================================================
+
+// 2024-08-08
+// 87th Lesson
+// Develop OrdersPage Screen Component with Redux Architecture
+
+// Darsimiz rejasi:
+// 1) OrdersPage Screen Componentiga daxldor type integration'ini hosil qilamiz
+// 2) OrdersPage Screen Componentini Redux Architecture bilan develop qilamiz
+
+// ---------------------------------------------------
+
+
+
+// 87th shu yerda yakunlandi
+// 수고 하셨습니다!

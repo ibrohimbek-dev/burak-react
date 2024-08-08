@@ -1,14 +1,17 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { CartItem } from "../../lib/types/search";
 
 const useBasktet = () => {
+
+  
 	const cartJson: string | null = localStorage.getItem("cartData");
 	const currentCart = cartJson ? JSON.parse(cartJson) : [];
 
-	const [cartItems, setCartItems] = useState<CartItem[]>(currentCart);
+  const [cartItems, setCartItems] = useState<CartItem[]>(currentCart);
+  
+
 
   const onAdd = (input: CartItem) => {
-    // SAVOL => Nega biz 'any' type'ini ishlatyapmiz? Alternative bormi?
 		const exist: any = cartItems.find((item: CartItem) => {
 			return item._id === input._id;
 		});
@@ -55,7 +58,9 @@ const useBasktet = () => {
 			setCartItems(cartUpdate);
 			localStorage.setItem("cartData", JSON.stringify(cartUpdate));
 		}
-	};
+  };
+  
+
 
 	const onDelete = (input: CartItem) => {
 		const cartUpdate = cartItems.filter((item: CartItem) => {
@@ -66,7 +71,9 @@ const useBasktet = () => {
 
 		setCartItems(cartUpdate);
 		localStorage.setItem("cartData", JSON.stringify(cartUpdate));
-	};
+  };
+  
+
 
 	const onDeleteAll = () => {
 		setCartItems([]);

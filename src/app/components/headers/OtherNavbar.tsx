@@ -59,7 +59,7 @@ const OtherNavbar = (props: NavbarProps) => {
 									</NavLink>
 								</Box>
 								<Box className="hover-line">
-									<NavLink activeClassName="underline" to={"/members/member"}>
+									<NavLink activeClassName="underline" to={"/members-page"}>
 										My Page
 									</NavLink>
 								</Box>

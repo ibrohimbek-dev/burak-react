@@ -8,9 +8,25 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PausedOrders from "./PausedOrders";
 import ProcessOrders from "./ProcessOrders";
 import FinishedOrders from "./FinishedOrders";
+import { setFinishedOrders, setPausedOrders, setProcessOrders } from "./slice";
+import { Dispatch } from "@reduxjs/toolkit";
+import { Order } from "../../../lib/types/order";
+import { useDispatch } from "react-redux";
+
+// REDUX SLICE & SELECTOR:
+const actionDispatch = (dispatch: Dispatch) => ({
+	setPausedOrders: (data: Order[]) => dispatch(setPausedOrders(data)),
+	setProcessOrders: (data: Order[]) => dispatch(setProcessOrders(data)),
+	setFinishedOrders: (data: Order[]) => dispatch(setFinishedOrders(data)),
+});
 
 const OrdersPage = () => {
-	const [isValue, setIsValue] = useState("1");
+	const { setPausedOrders, setProcessOrders, setFinishedOrders } =
+		actionDispatch(useDispatch());
+  const [isValue, setIsValue] = useState("1");
+  
+
+  // HANDLERS:
 
 	// HANDLERS:
 	const handleChange = (e: SyntheticEvent, newValue: string) => {
