@@ -561,7 +561,6 @@ export const docs = () => {};
 // Flux => Store handles all logic
 // Redux => Reducer handles all logic
 
-
 // How Debugging is handled?:
 // MVC => Debugging is difficult duo to bidirectional flow
 // Flux => Ensures simle debugging with the dispachter
@@ -594,7 +593,6 @@ export const docs = () => {};
 // Agar Redux mavjud bo'lmaganida, Parent'dan ~ Child'ga, hamda Child'ni o'zini children'lariga ma'lumotlarni pass
 // qilishimizga to'g'ri kelar edi. Lekin Redux'da esa, istalgan componentdan ma'lumotlarni Redux Single Store'ga saqlab,
 // saqlangan ma'lumotni istalgan component'dan chaqirishimiz mumkin.
-
 
 // ---------------------------------------------------------
 
@@ -667,7 +665,6 @@ export const docs = () => {};
 // 80th shu yerda yakunlandi
 // 수고 하셨습니다!
 
-
 // =================================================================
 
 // 2024-07-31
@@ -684,11 +681,8 @@ export const docs = () => {};
 // Screen componentlarda backenddan kelgan ma'lumotni redux'ga joylab
 // ularni sectional componentda chaqirib ishlatishimiz mumkin.
 
-
-
 // 81th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // ==================================================================
 
@@ -700,12 +694,10 @@ export const docs = () => {};
 // 1) ProductsPage Screen Componentini type integrationini amalga oshiramiz
 // 2) ProductsPage Screen Componentini Slice va Selectorlariin develop qilamiz
 
-
 // ---------------------------------------------------
 
 // 82th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -721,11 +713,9 @@ export const docs = () => {};
 
 // ---------------------------------------------------
 
-
 // await axios.get(url, { withCredentials: true }); => Server aynan kim murojaat etayotganligi to'g'risida ma'lumotga ega bo'lish mantig'i
 // 83th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -740,10 +730,8 @@ export const docs = () => {};
 
 // ---------------------------------------------------
 
-
 // e.stopPropagation() => Ushbu mantiq bizga child'ni parentiga tegishlik bo'lgan
 // mantiqlarda halos qilishga yordam beradi.
-
 
 // Customized hooklar tarkibida biz osongina asynchronous operatsiyalarini osongina
 // bajara olamiz.
@@ -759,7 +747,6 @@ export const docs = () => {};
 // 84th shu yerda yakunlandi
 // 수고 하셨습니다!
 
-
 // =================================================================
 
 // 2024-08-06
@@ -772,13 +759,11 @@ export const docs = () => {};
 
 // ---------------------------------------------------
 
-
 // sweetalert2 => package'i orqalik biz, chiroylik va qulay UI'ga ega bo'lgan
 // alert'larni hosil qilishimiz mumkin.
 
 // 85th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -794,11 +779,9 @@ export const docs = () => {};
 
 // ---------------------------------------------------
 
-
 // await axios.post(url, input, { withCredentials: true }) =>
 // Bu shart bizga backend'dan frontend'imizga kim murojaat qilayotganligini aniqlab
 // cookie'larni joylab beradi.
-
 
 // Agar bizning project ikki hil domain'da bo'lsa va ular https protocol'ida bo'lmasa
 // unday holatda cookie'lar oldi-berdisi amalga oshmaydi. Hattoki { withCredentials: true } bo'lganda ham.
@@ -808,16 +791,12 @@ export const docs = () => {};
 // Lekin, hozirgi loyihamiz, o'zimizning mashinamizda run bo'layotganligi uchun, hech qanday muammo
 // sodir bo'lmaydi.
 
-
 // Cookies => package bizga browser'imizdagi cookie'larni qo'lga olishimizga imkon beradi
-
 
 // { children } => Biz wrap qilayotgan narsamizni ichidagi mantiq
 
-
 // Biz global context'ni hosil qilish uchun, asosiy index.tsx faylida
 // barcha integratsiya qilingan mantiqlarni, uni ichiga wrap qilishimiz kerak bo'ladi.
-
 
 // Biz quyidagi mantiqlar orqalik, redux mantig'ini ishlatmayapmiz, biz
 // context mantig'ini o'rganish maqsadida, undan faol foydalanypamiz. Ya'ni
@@ -826,13 +805,11 @@ export const docs = () => {};
 // context bizga redux singarin mukammal storage'ni hosil qilib bermaydi, lekin
 // simple data'larni handle qilib beradi.
 
-
 // Biz global context tarkibida hosil qilgan har qanday mantiqlarimizni
 // loyihamizning istalgan qismida ishlata olamiz.
 
 // 86th shu yerda yakunlandi
 // 수고 하셨습니다!
-
 
 // =================================================================
 
@@ -846,7 +823,26 @@ export const docs = () => {};
 
 // ---------------------------------------------------
 
-
-
 // 87th shu yerda yakunlandi
 // 수고 하셨습니다!
+
+// =================================================================
+
+// 2024-08-08
+// 88th Lesson
+// Develop OrdersPage Screen Component business logic
+
+// Darsimiz rejasi:
+// 1) Basketimiz orqali yangi orderlarni hosil etamiz
+// 2) User'larimizga daxldor bo'lgan jami order'larni backend'dan chaqiramiz
+// 3) Order'larimizni update qilish mantig'ini develop qilamiz
+
+// ---------------------------------------------------
+
+// 88th shu yerda yakunlandi
+// 수고 하셨습니다!
+
+
+
+
+

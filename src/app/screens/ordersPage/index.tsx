@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, SyntheticEvent } from "react";
 import { Container, Stack, Box } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
@@ -10,8 +10,10 @@ import ProcessOrders from "./ProcessOrders";
 import FinishedOrders from "./FinishedOrders";
 import { setFinishedOrders, setPausedOrders, setProcessOrders } from "./slice";
 import { Dispatch } from "@reduxjs/toolkit";
-import { Order } from "../../../lib/types/order";
+import { Order, OrderInquiry } from "../../../lib/types/order";
 import { useDispatch } from "react-redux";
+import { OrderStatus } from "../../../lib/enums/order.enum";
+import OrderService from "../../services/OrderService";
 
 // REDUX SLICE & SELECTOR:
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -23,28 +25,52 @@ const actionDispatch = (dispatch: Dispatch) => ({
 const OrdersPage = () => {
 	const { setPausedOrders, setProcessOrders, setFinishedOrders } =
 		actionDispatch(useDispatch());
-  const [isValue, setIsValue] = useState("1");
-  
+	const [value, setValue] = useState("1");
+	// SAVOL => setOrderInquiry() nega ishlatilmadi?
+	const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
+		page: 1,
+		limit: 5,
+		orderStatus: OrderStatus.PAUSE,
+	});
 
-  // HANDLERS:
+	useEffect(() => {
+		const orderService = new OrderService();
+
+		orderService
+			.getMyOrders({ ...orderInquiry, orderStatus: OrderStatus.PAUSE })
+			.then((data) => setPausedOrders(data))
+			.catch((err) => console.log(err));
+
+		orderService
+			.getMyOrders({ ...orderInquiry, orderStatus: OrderStatus.PROCESS })
+			.then((data) => setProcessOrders(data))
+			.catch((err) => console.log(err));
+
+		orderService
+			.getMyOrders({ ...orderInquiry, orderStatus: OrderStatus.FINISH })
+			.then((data) => setFinishedOrders(data))
+			.catch((err) => console.log(err));
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [orderInquiry]);
 
 	// HANDLERS:
 	const handleChange = (e: SyntheticEvent, newValue: string) => {
-		setIsValue(newValue);
+		setValue(newValue);
 	};
 
 	return (
 		<div className="order-page">
 			<Container className="order-container">
 				<Stack className="order-left">
-					<TabContext value={isValue}>
+					<TabContext value={value}>
 						<Box className="order-nav-frame">
 							<Box sx={{ borderBottom: 1, borderColor: "divider" }}>
 								<Tabs
 									onChange={handleChange}
 									aria-label="basic tabs example"
 									className="table-list"
-									value={isValue}
+									value={value}
 								>
 									<Tab label="PAUSED ORDERS" value={"1"} />
 									<Tab label="PROCESS ORDERS" value={"2"} />
