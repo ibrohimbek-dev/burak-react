@@ -13,11 +13,12 @@ const ContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
 		: null;
 
 	const [authMember, setAuthMember] = useState<Member | null>(memberData);
-
-	console.log(" ======================== verifiying ======================== ");
+	const [orderBuilder, setOrderBuilder] = useState<Date>(new Date());
 
 	return (
-		<GlobalContext.Provider value={{ authMember, setAuthMember }}>
+		<GlobalContext.Provider
+			value={{ authMember, setAuthMember, orderBuilder, setOrderBuilder }}
+		>
 			{children}
 		</GlobalContext.Provider>
 	);

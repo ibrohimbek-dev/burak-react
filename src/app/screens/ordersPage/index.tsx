@@ -14,6 +14,7 @@ import { Order, OrderInquiry } from "../../../lib/types/order";
 import { useDispatch } from "react-redux";
 import { OrderStatus } from "../../../lib/enums/order.enum";
 import OrderService from "../../services/OrderService";
+import { useGlobals } from "../../hooks/useGlobals";
 
 // REDUX SLICE & SELECTOR:
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -26,8 +27,10 @@ const OrdersPage = () => {
 	const { setPausedOrders, setProcessOrders, setFinishedOrders } =
 		actionDispatch(useDispatch());
 	const [value, setValue] = useState("1");
-  // SAVOL => setOrderInquiry() nega ishlatilmadi?
-  
+	// SAVOL => setOrderInquiry() nega ishlatilmadi?
+
+	const { orderBuilder } = useGlobals();
+
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
 		page: 1,
@@ -54,7 +57,7 @@ const OrdersPage = () => {
 			.catch((err) => console.log(err));
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [orderInquiry]);
+	}, [orderInquiry, orderBuilder]);
 
 	// HANDLERS:
 	const handleChange = (e: SyntheticEvent, newValue: string) => {
@@ -82,8 +85,8 @@ const OrdersPage = () => {
 						</Box>
 
 						<Stack className="order-main-content">
-							<PausedOrders />
-							<ProcessOrders />
+							<PausedOrders setValue={setValue} />
+							<ProcessOrders setValue={setValue} />
 							<FinishedOrders />
 						</Stack>
 					</TabContext>
