@@ -10,13 +10,13 @@ import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
 
 // REDUX SLICE & SELECTOR
-const pausedOrderRetriever = createSelector(
+const pausedOrdersRetriever = createSelector(
 	retrievePausedOrders,
 	(pausedOrders) => ({ pausedOrders })
 );
 
 const PausedOrders = () => {	
-	const { pausedOrders } = useSelector(pausedOrderRetriever);
+	const { pausedOrders } = useSelector(pausedOrdersRetriever);
 
 	// HANDLERS:
 	const deleteOrderHandler = () => {

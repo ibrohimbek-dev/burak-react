@@ -3,75 +3,100 @@ import { Box, Stack } from "@mui/material";
 import Button from "@mui/material/Button";
 import TabPanel from "@mui/lab/TabPanel";
 import moment from "moment";
+import { createSelector } from "@reduxjs/toolkit";
+import { retieveProcessOrders } from "./selector";
+import { useSelector } from "react-redux";
+import { Order, OrderItem } from "../../../lib/types/order";
+import { Product } from "../../../lib/types/product";
+import { serverApi } from "../../../lib/config";
+
+// REDUX SLICE & SELECTOR
+const processOrdersRetriever = createSelector(
+	retieveProcessOrders,
+	(processOrders) => ({ processOrders })
+);
 
 const ProcessOrders = () => {
-	const orderBox: number[] = [1, 2, 3];
-	const orderProcess: number[] = [1, 2, 3, 4];
+
+	const { processOrders } = useSelector(processOrdersRetriever);
+
 
 	return (
 		<TabPanel value="2">
 			<Stack>
-				{orderBox?.map((ele, index) => (
-					<Box key={index} className="order-main-box">
-						<Box className="order-box-scroll">
-							{orderProcess?.map((ele, index) => (
-								<Box key={index} className="orders-name-price">
-									<img
-										src={"/img/lavash.webp"}
-										alt=""
-										className="order-dish-img"
-									/>
-									<p className="title-dish">Lavash</p>
+				{processOrders?.map((order: Order) => {
+					return (
+						<Box key={order._id} className="order-main-box">
+							<Box className="order-box-scroll">
+								{order?.orderItems?.map((orderItem: OrderItem) => {
+									const product: Product = order.productData.filter(
+										(ele: Product) => {
+											return orderItem.productId === ele._id;
+										}
+									)[0];
 
-									<Box className="price-box">
-										<p>$15</p>
-										<img src={"/icons/close.svg"} alt="" />
-										<p>2</p>
-										<img src={"/icons/pause.svg"} alt="" />
-										<p style={{ marginLeft: "15px" }}>${15 * 2}</p>
-									</Box>
-								</Box>
-							))}
-						</Box>
+									const imagePath = `${serverApi}/${product.productImages[0]}`;
+									return (
+										<Box key={orderItem._id} className="orders-name-price">
+											<img src={imagePath} alt="" className="order-dish-img" />
+											<p className="title-dish">{product.productName}</p>
 
-						<Box className="total-price-box">
-							<Box className="box-total">
-								<p>Product price</p>
-								<p>${30 * 4}</p>
-								<img
-									alt=""
-									src={"/icons/plus.svg"}
-									style={{ marginLeft: "20px" }}
-								/>
-								<p>Delivery cost</p>
-								<p>$3</p>
-								<img
-									src={"/icons/pause.svg"}
-									style={{ marginLeft: "20px" }}
-									alt=""
-								/>
-								<p>Total</p>
-								<p>${30 * 4 + 3}</p>
+											<Box className="price-box">
+												<p>${orderItem.itemPrice}</p>
+												<img src={"/icons/close.svg"} alt="" />
+												<p>{orderItem.itemQuantity}</p>
+												<img src={"/icons/pause.svg"} alt="" />
+												<p style={{ marginLeft: "15px" }}>
+													${orderItem.itemQuantity * orderItem.itemPrice}
+												</p>
+											</Box>
+										</Box>
+									);
+								})}
 							</Box>
 
-							<p className="data-compl">{moment().format("YY-MM-DD HH:mm")}</p>
+							<Box className="total-price-box">
+								<Box className="box-total">
+									<p>Product price</p>
+									<p>${order.orderTotal - order.orderDelivery}</p>
+									<img
+										alt=""
+										src={"/icons/plus.svg"}
+										style={{ marginLeft: "20px" }}
+									/>
+									<p>Delivery cost</p>
+									<p>${order.orderDelivery}</p>
+									<img
+										src={"/icons/pause.svg"}
+										style={{ marginLeft: "20px" }}
+										alt=""
+									/>
+									<p>Total</p>
+									<p>${order.orderTotal}</p>
+								</Box>
 
-							<Button variant="contained" className="verify-button">
-								Verify to Fulfill
-							</Button>
+								<p className="data-compl">
+									{moment().format("YY-MM-DD HH:mm")}
+								</p>
+
+								<Button variant="contained" className="verify-button">
+									Verify to Fulfill
+								</Button>
+							</Box>
 						</Box>
-					</Box>
-				))}
+					);
+				})}
 
-				{orderBox?.length === 0 && (
-					<Box display="flex" flexDirection={"row"} justifyContent={"center"}>
-						<img
-							src={"/icons/noimage-list.svg"}
-							alt=""
-							style={{ width: 300, height: 300 }}
-						/>
-					</Box>
-				)}
+				{!processOrders ||
+					(processOrders.length === 0 && (
+						<Box display="flex" flexDirection={"row"} justifyContent={"center"}>
+							<img
+								src={"/icons/noimage-list.svg"}
+								alt=""
+								style={{ width: 300, height: 300 }}
+							/>
+						</Box>
+					))}
 			</Stack>
 		</TabPanel>
 	);

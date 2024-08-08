@@ -26,7 +26,9 @@ const OrdersPage = () => {
 	const { setPausedOrders, setProcessOrders, setFinishedOrders } =
 		actionDispatch(useDispatch());
 	const [value, setValue] = useState("1");
-	// SAVOL => setOrderInquiry() nega ishlatilmadi?
+  // SAVOL => setOrderInquiry() nega ishlatilmadi?
+  
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
 		page: 1,
 		limit: 5,
